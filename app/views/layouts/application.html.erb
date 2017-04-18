@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:site_name" content="Securis"/>
+    <meta property="og:title" content="Securis: Fatima"/>
+    <meta property="og:description" content="All the information you need for the celebrations of the Centennial of the apparitions of Fatima."/>
+    <meta property="og:image" content="resources/securis.png">
+    <meta property="og:url" content="https://securis.github.io/fatima17">
+    <meta property="og:type" content="site"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <title>Securis</title>
+	
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	
+	<%= csrf_meta_tags %>
+
+</head>
+<body>
+
+	<!--NAVIGATION-->
+    <nav id="navigationbar" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a id="navHome" href="/fatima/index">
+                    <img src="/images/Securis-Fatima17_logo_lat.png" class="img-responsive desktop-only" width="170" height="170" alt="SECURIS: Fatima logo">
+                    <img src="/images/securis.svg" class="img-responsive mobile-medium" width="50" height="50" alt="SECURIS: Fatima logo">
+                </a>
+            </div>
+
+            <ul class="nav navbar-nav mobile-only" id="emergency_button">
+                <li><a href="/fatima/emergency">
+                    <img src="/images/emergency.svg" class="img-responsive" width="45" height="45" alt=""> 
+                </a></li>
+            </ul>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                <ul class="nav navbar-nav navbar-right mobile-only">
+                    <li class="navOption"><a href="/fatima/explore"><%= t('menu.menu_op1') %></a></li>
+                    <li class="navOption"><a href="/fatima/lady_of_fatima"><%= t('menu.menu_op2') %></a></li>
+                    <li class="navOption"><a href="/fatima/pray"><%= t('menu.menu_op3') %></a></li>
+                    <li class="navOption"><a href="/fatima/on_foot"><%= t('menu.menu_op4') %></a></li>
+                    <li class="navOption"><a href="/fatima/advice"><%= t('menu.menu_op5') %></a></li>
+                    <li class="navOption"><a href="/fatima/lost_people"><%= t('menu.menu_op6') %></a></li>
+                </ul>
+
+				<ul class="nav navbar-nav navbar-right desktop-medium">
+                    <li role="presentation" class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><%= t('menu.menu_op1') %></a>
+                        <ul class="dropdown-menu">
+                            <li class="navOption"><a href="/fatima/explore"><%= t('menu.submenu_op1_1') %></a></li>
+                            <li class="navOption"><a href="/fatima/attractions"><%= t('menu.submenu_op1_2') %></a></li>
+                            <li class="navOption"><a href="/fatima/contacts"><%= t('menu.submenu_op1_3') %></a></li>
+                        </ul>
+                    </li>
+                    <li role="presentation" class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><%= t('menu.menu_op2') %></a>
+                        <ul class="dropdown-menu">
+                            <li class="navOption"><a href="/fatima/lady_of_fatima"><%= t('menu.submenu_op2_1') %></a></li>
+                            <li class="navOption"><a href="/fatima/three_shepherds"><%= t('menu.submenu_op2_2') %></a></li>
+                            <li class="navOption"><a href="/fatima/appearances"><%= t('menu.submenu_op2_3') %></a></li>
+                        </ul>
+                    </li>
+                    <li role="presentation" class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><%= t('menu.menu_op3') %></a>
+                        <ul class="dropdown-menu">
+                            <li class="navOption"><a href="/fatima/pray"><%= t('menu.submenu_op3_1') %></a></li>
+                            <li class="navOption"><a href="/fatima/program"><%= t('menu.submenu_op3_2') %></a></li>
+                            <li class="navOption"><a href="/fatima/news"><%= t('menu.submenu_op3_3') %></a></li>
+                        </ul>
+                    </li>
+                    <li role="presentation" class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><%= t('menu.menu_op4') %></a>
+                        <ul class="dropdown-menu">
+                            <li class="navOption"><a href="/fatima/on_foot"><%= t('menu.submenu_op4_1') %></a></li>
+                            <li class="navOption"><a href="/fatima/car"><%= t('menu.submenu_op4_2') %></a></li>
+                            <li class="navOption"><a href="/fatima/public_transport"><%= t('menu.submenu_op4_3') %></a></li>
+                        </ul>
+                    </li>
+                    <li role="presentation" class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><%= t('menu.menu_op5') %></a>
+                        <ul class="dropdown-menu">
+                            <li class="navOption"><a href="/fatima/advice"><%= t('menu.submenu_op5_1') %></a></li>
+                            <li class="navOption"><a href="/fatima/emergency"><%= t('menu.submenu_op5_2') %></a></li>
+                            <li class="navOption"><a href="/fatima/lost_people"><%= t('menu.menu_op6') %></a></li>
+                            <li class="navOption"><a href="/fatima/official_contacts"><%= t('menu.submenu_op5_3') %></a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+					<li role="presentation" class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= t('menu.menu_op7') %><span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+							<li class="navOption"><a href="/change_locale/en">
+                                English<% if cookies[:educator_locale] == 'en' %><span id='lang_en' class='glyphicon glyphicon-ok hidden' aria-hidden='true'></span><% end %>
+                            </a></li>
+							<li class="navOption"><a href="/change_locale/pt">Português <span id='lang_pt' class='glyphicon glyphicon-ok hidden' aria-hidden='true'></span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+                
+            </div>
+            
+            <!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <% if @sub_menu %>
+        <nav id="submenu" class="navbar-static-top mobile-only">
+            <div class="container-fluid">
+                <ul class="nav nav-submenu nav-pills">
+                    <li role="presentation" class="active">
+                        <a href="<%= @link1 %>" class="btn"><%= @title1 %></a>
+                    </li>
+                    <li role="presentation">
+                        <a href="<%= @link2 %>" class="btn"><%= @title2 %></a>
+                    </li>
+                    <li role="presentation">
+                        <a href="<%= @link3 %>" class="btn"><%= @title3 %></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    <% end %>
+
+<section id="page_content">
+    <div class="container-fluid text-justify">
+
+        <%= yield %>
+
+    </div>
+</section>
+
+
+<footer class="footer">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-md-4 col-sm-3 col-xs-12">
+                    <h4>ABOUT</h4>
+                    <p><a href="#">About us</a> | <a href="#">SECURIS: Fatima on Android</a></p>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-8">
+                    <h4>JOIN OUR MAILING LIST</h4>
+                    <form class="form-inline">
+                      <div class="form-group">
+                        <label for="subscribeEmail">Email</label>
+                        <input type="email" class="form-control" id="subscribeEmail" placeholder="Enter your email">
+                      </div>
+                      <button type="submit" class="btn btn-default">Subscribe</button>
+                    </form>
+                </div>
+                <div class="col-md-4 col-sm-3 col-xs-12">
+                    <h4>CONTACT US</h4>
+                    <p><a href="#"><i class="fa fa-envelope"></i> Email</a> | 
+                    <a href="#"><i class="fa fa-twitter"></i> Twitter</a> | 
+                    <a href="#"><i class="fa fa-facebook"></i> Facebook</a></p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 col-xs-12">
+                    <h6 class="text-right">2017 SECURIS</h6>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

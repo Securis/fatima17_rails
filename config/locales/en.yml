@@ -1,0 +1,45 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+    menu:
+        menu_op1: "Explore"
+        menu_op2: "History"
+        menu_op3: "Centennial"
+        menu_op4: "Directions"
+        menu_op5: "Security"
+        menu_op6: "Lost People"
+        menu_op7: "Language"
+        submenu_op1_1: "Explore"
+        submenu_op1_2: "Attractions"
+        submenu_op1_3: "Contacts"
+        submenu_op2_1: "Our Lady of Fatima"
+        submenu_op2_2: "The Three Shepherds"
+        submenu_op2_3: "Appearances"
+        submenu_op3_1: "Pray"
+        submenu_op3_2: "Program"
+        submenu_op3_3: "News"
+        submenu_op4_1: "On Foot"
+        submenu_op4_2: "By Car"
+        submenu_op4_3: "Public Transportation"
+        submenu_op5_1: "Advices"
+        submenu_op5_2: "Emergency"
+        submenu_op5_3: "Consulates / Embassies"

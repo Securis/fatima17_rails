@@ -1,0 +1,213 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ 
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 1px;
+}
+
+/*MOBILE VS DESKTOP*/
+.mobile-only, .mobile-medium {display:block;}
+.desktop-only, .desktop-medium {display:none;}
+@media (min-width: 768px) and (max-width: 970px) {
+	.mobile-only, .desktop-only {display:none;}
+	.mobile-medium, .desktop-medium {display:block;}
+}
+@media (min-width: 970px) {
+	.mobile-only, .mobile-medium {display:none;}
+	.desktop-only, .desktop-medium {display:block;}
+}
+
+/*NAVBAR*/
+.navbar-default,
+#submenu {
+  background-color: #84b5f1;
+  border-color: rgba(34, 34, 34, 0.05);
+  width: 100%;
+}
+.navbar-default .navbar-header .navbar-toggle .icon-bar{
+	background-color: white;
+}
+.navbar-default .navbar-header .navbar-toggle[aria-expanded="true"]{
+	background: #f48942;
+}
+
+.navbar-nav > li{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.navbar-default .nav > li > a,
+.navbar-default .nav > li > a:focus,
+#submenu a {
+  font-weight: 600;
+  font-size: 16px;
+  color: white;
+}
+.navbar-default .nav > li > a:hover,
+.navbar-default .nav > li > a:focus:hover,
+#submenu a:hover,
+#submenu a:focus:hover  {
+  color:  #f48942;
+}
+
+.navbar-default .nav > .active > a,
+.navbar-default .nav > .active > a:hover,
+.navbar-default .nav > .active > a:focus,
+#submenu .active > a, 
+#submenu .active > a:hover,
+#submenu .active > a:focus  {
+    color: white;
+    background:  #f48942;
+}
+
+.navbar-default .nav .dropdown .dropdown-toggle:hover {
+	display: block;
+}
+
+.navbar-default .nav .dropdown .dropdown-menu > li > a,
+.navbar-default .nav .dropdown .dropdown-menu > li > a:focus {
+	color: white;
+}
+.navbar-default .nav .dropdown .dropdown-menu > li > a:hover,
+.navbar-default .nav .dropdown .dropdown-menu > li > a:focus:hover {
+	color:  #f48942;
+}
+.navbar-default .nav .dropdown .dropdown-toggle[aria-expanded="true"] {
+    color: white;
+    background:  #f48942;
+}
+#navHome {
+    position: absolute;
+    left: 45%;
+}
+#emergency_button {
+    position: absolute;
+    top: -15px;
+}
+#submenu {
+	padding-top: 52px;
+	position: fixed;
+}
+
+.nav-submenu {
+    display:table;
+    width:100%;
+    margin: 0;
+}
+.nav-submenu > li {
+    float:none;
+    display:table-cell;
+    text-align:center;
+}
+#page_content {
+	padding-top: 120px;
+}
+
+@media (min-width: 768px) {
+	.navbar {
+		//background: transparent;
+	    -webkit-transition: all 0.6s ease-out;
+	    -moz-transition: all 0.6s ease-out;
+	    -o-transition: all 0.6s ease-out;
+	    -ms-transition: all 0.6s ease-out;
+	    transition: all 0.6s ease-out;
+	}
+
+	.navbar.scrolled {
+	    background: #84b5f1;
+	}
+
+
+	.navbar-default .nav > li > a,
+	.navbar-default .nav > li > a:focus,
+	.navbar-default .navbar-nav>.open>a, 
+	.navbar-default .navbar-nav>.open>a:focus, 
+	.navbar-default .navbar-nav>.open>a:hover {
+		//background-color: transparent;
+		color: white
+	}
+	.navbar-default .nav > li > a:hover,
+	.navbar-default .nav > li > a:focus:hover {
+		//background-color: transparent;
+		color: #f48942;
+	}
+	.navbar-default .nav > .active > a,
+	.navbar-default .nav > .active > a:hover,
+	.navbar-default .nav > .active > a:focus {
+	    background-color: #f48942;
+	    color: white;
+	}
+	.navbar-default .nav .dropdown .dropdown-menu > li > a {
+		color: #84b5f1;
+	}
+	.navbar-default .nav .dropdown:hover > ul.dropdown-menu {
+		display: block;
+	}
+
+	#navHome {
+	    left: 3%;
+	}
+	#page_content {
+		padding-top: 60px;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 970px) {
+	.navbar-default .nav > li > a,
+	.navbar-default .nav > li > a:focus
+	{
+	  font-weight: 600;
+	  font-size: 14px;
+	}
+	#navHome {
+		width:15%;
+	}
+}
+
+/*FOOTER*/
+footer {
+	background-color: #84b5f1;
+	color: white;
+}
+footer h4 {
+	font-weight: 600;
+    margin-top: 20px;
+}
+footer p,
+footer form label{
+	font-size: 14px;
+	font-weight:normal; 
+}
+footer p{
+    margin-top: 15px !important;;
+}
+footer p a{
+	color: white;
+}
+footer p a:hover{
+	color: #f48942;
+}
