@@ -43,3 +43,12 @@ pt:
         submenu_op5_1: "Conselho"
         submenu_op5_2: "Emergências"
         submenu_op5_3: "Consulados / Embaixadas"
+    footer:
+        about: "Sobre"
+        about_us: "Sobre nós"
+        android: "SECURIS: Fátima para Android"
+        mailing_list: "Subscreve a nossa Mailing List"
+        email: "Email"
+        enter_email: "Introduzir email"
+        subscribe: "Subscrever"
+        contact: "Contactos"

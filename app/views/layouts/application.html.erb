@@ -142,16 +142,6 @@
 <section id="page_content">
     <div class="container-fluid text-justify">
 
-<%= yield :head %>
-
-        <% h = {hashes: "awesome1", ruby: "awesome"} %>
-        <p>Key: <%= h[:hashes] %> Value: <%= h[:ruby] %></p>
-
-        <% a = [{hashes: "awesome1", ruby: "awesome2"}, {hashes: "awesome3", ruby: "awesome4"}] %>
-        <% a.each do |policy| %>
-            <p>Key: <%= policy[:hashes] %> Value: <%= policy[:ruby] %></p>
-        <% end %>
-
         <%= yield %>
 
     </div>
@@ -163,21 +153,21 @@
 
             <div class="row">
                 <div class="col-md-4 col-sm-3 col-xs-12">
-                    <h4>ABOUT</h4>
-                    <p><a href="#">About us</a> | <a href="#">SECURIS: Fatima on Android</a></p>
+                    <h4><%= t('footer.about') %></h4>
+                    <p><a href="#"><%= t('footer.about_us') %></a> | <a href="#"><%= t('footer.android') %></a></p>
                 </div>
                 <div class="col-md-4 col-sm-6 col-xs-8">
-                    <h4>JOIN OUR MAILING LIST</h4>
+                    <h4><%= t('footer.mailing_list') %></h4>
                     <form class="form-inline">
                       <div class="form-group">
-                        <label for="subscribeEmail">Email</label>
-                        <input type="email" class="form-control" id="subscribeEmail" placeholder="Enter your email">
+                        <label for="subscribeEmail"><%= t('footer.email') %></label>
+                        <input type="email" class="form-control" id="subscribeEmail" placeholder="<%= t('footer.enter_email') %>">
                       </div>
-                      <button type="submit" class="btn btn-default">Subscribe</button>
+                      <button type="submit" class="btn btn-default"><%= t('footer.subscribe') %></button>
                     </form>
                 </div>
                 <div class="col-md-4 col-sm-3 col-xs-12">
-                    <h4>CONTACT US</h4>
+                    <h4><%= t('footer.contact') %></h4>
                     <p><a href="#"><i class="fa fa-envelope"></i> Email</a> | 
                     <a href="#"><i class="fa fa-twitter"></i> Twitter</a> | 
                     <a href="#"><i class="fa fa-facebook"></i> Facebook</a></p>
