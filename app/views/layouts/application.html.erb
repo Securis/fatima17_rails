@@ -11,13 +11,13 @@
     <meta property="og:image" content="resources/securis.png">
     <meta property="og:url" content="https://securis.github.io/fatima17">
     <meta property="og:type" content="site"/>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
     <title>Securis</title>
 	
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-	
+
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	
 	<%= csrf_meta_tags %>
@@ -96,6 +96,7 @@
                     <li role="presentation" class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><%= t('menu.menu_op5') %></a>
                         <ul class="dropdown-menu">
+                            <li class="navOption"><%= link_to t('menu.submenu_op5_1'), fatima_advice_path(locale: I18n.locale) %></li>
                             <li class="navOption"><a href="/fatima/advice"><%= t('menu.submenu_op5_1') %></a></li>
                             <li class="navOption"><a href="/fatima/emergency"><%= t('menu.submenu_op5_2') %></a></li>
                             <li class="navOption"><a href="/fatima/lost_people"><%= t('menu.menu_op6') %></a></li>
