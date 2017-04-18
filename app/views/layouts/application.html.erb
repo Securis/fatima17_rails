@@ -108,10 +108,8 @@
 					<li role="presentation" class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= t('menu.menu_op7') %><span class="caret"></span></a>
                         <ul class="dropdown-menu">
-							<li class="navOption"><a href="/change_locale/en">
-                                English<% if cookies[:educator_locale] == 'en' %><span id='lang_en' class='glyphicon glyphicon-ok hidden' aria-hidden='true'></span><% end %>
-                            </a></li>
-							<li class="navOption"><a href="/change_locale/pt">Português <span id='lang_pt' class='glyphicon glyphicon-ok hidden' aria-hidden='true'></span></a></li>
+                            <li class="navOption"><%= link_to 'EN', root_path(locale: :en) %></li>
+                            <li class="navOption"><%= link_to 'PT', root_path(locale: :pt) %></li>
                         </ul>
                     </li>
                 </ul>
@@ -143,6 +141,8 @@
 <section id="page_content">
     <div class="container-fluid text-justify">
 
+
+        <% cookies[:educator_locale] %>
         <%= yield %>
 
     </div>

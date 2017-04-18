@@ -14,15 +14,3 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-
-$(document).ready(function() {
-	switch(document.cookie["educator_locale"]) {
-	    case 'en':
-	        $("#lang_en").show();
-	        break;
-	    default:
-	        $("#lang_pt").show();
-	}
-
-	console.log("HERE " + document.cookie['educator_locale']);
-});
