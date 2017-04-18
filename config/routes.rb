@@ -1,47 +1,45 @@
 Rails.application.routes.draw do
+  
   scope "(:locale)", locale: /en|pt/ do
 
-    get 'fatima/index'
+    get 'history/lady_of_fatima'
 
-    get 'fatima/explore'
+    get 'history/three_shepherds'
 
-    get 'fatima/attractions'
+    get 'history/appearances'
 
-    get 'fatima/contacts'
+    get 'utility/sos'
 
-    get 'fatima/lady_of_fatima'
+    get 'lost_people/info'
 
-    get 'fatima/three_shepherds'
+    get 'security/advice'
 
-    get 'fatima/appearances'
+    get 'security/emergency'
 
-    get 'fatima/pray'
+    get 'security/official_contacts'
 
-    get 'fatima/program'
+    get 'directions/foot'
 
-    get 'fatima/news'
+    get 'directions/car'
 
-    get 'fatima/on_foot'
+    get 'directions/transports'
 
-    get 'fatima/car'
+    get 'centennial/pray'
 
-    get 'fatima/public_transport'
+    get 'centennial/program'
 
-    get 'fatima/advice'
+    get 'centennial/news'
 
-    get 'fatima/emergency'
+    get 'explore/explore'
 
-    get 'fatima/official_contacts'
+    get 'explore/attractions'
 
-    get 'fatima/lost_people'
-
-    get 'fatima/panic'
-
+    get 'explore/contacts'
     # The priority is based upon order of creation: first created -> highest priority.
     # See how all your routes lay out with "rake routes".
 
     # You can have the root of your site routed with "root"
-    root 'fatima#index'
+    root 'explore#explore'
 
     # Example of regular route:
     #   get 'products/:id' => 'catalog#view'

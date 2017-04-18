@@ -25,6 +25,51 @@
 </head>
 <body>
 
+    <% menu_options = [
+        {id: 1, name: t('menu.menu_op1'), link: explore_explore_path(locale: I18n.locale), 
+            submenu: [
+                {name: t('menu.submenu_op1_1'), link: explore_explore_path(locale: I18n.locale)}, 
+                {name: t('menu.submenu_op1_2'), link: explore_attractions_path(locale: I18n.locale)}, 
+                {name: t('menu.submenu_op1_3'), link: explore_contacts_path(locale: I18n.locale)}
+            ]}, 
+        {id: 2, name: t('menu.menu_op2'), link: history_lady_of_fatima_path(locale: I18n.locale), 
+            submenu: [
+                {name: t('menu.submenu_op2_1'), link: explore_explore_path(locale: I18n.locale)}, 
+                {name: t('menu.submenu_op2_2'), link: explore_attractions_path(locale: I18n.locale)}, 
+                {name: t('menu.submenu_op2_3'), link: explore_contacts_path(locale: I18n.locale)} 
+            ]},
+        {id: 3, name: t('menu.menu_op3'), link: centennial_pray_path(locale: I18n.locale), 
+            submenu: [
+                {name: t('menu.submenu_op3_1'), link: centennial_pray_path(locale: I18n.locale)},
+                {name: t('menu.submenu_op3_2'), link: centennial_program_path(locale: I18n.locale)}, 
+                {name: t('menu.submenu_op3_3'), link: centennial_news_path(locale: I18n.locale)}
+                ]}, 
+        {id: 4, name: t('menu.menu_op4'), link: directions_foot_path(locale: I18n.locale), 
+            submenu: [
+                {name: t('menu.submenu_op4_1'), link: directions_foot_path(locale: I18n.locale)},  
+                {name: t('menu.submenu_op4_2'), link: directions_car_path(locale: I18n.locale)}, 
+                {name: t('menu.submenu_op4_3'), link: directions_transports_path(locale: I18n.locale)}
+            ]}, 
+        {id: 5, name: t('menu.menu_op5'), link: security_advice_path(locale: I18n.locale), 
+            submenu: [
+                {name: t('menu.submenu_op5_1'), link: security_advice_path(locale: I18n.locale)}, 
+                {name: t('menu.submenu_op5_2'), link: security_emergency_path(locale: I18n.locale)}, 
+                {name: t('menu.submenu_op5_3'), link: security_official_contacts_path(locale: I18n.locale)}
+            ]}, 
+        {id: 6, name: t('menu.menu_op6'), link: lost_people_info_path(locale: I18n.locale), submenu: []} 
+    ] %>
+
+
+    <% content_for :language_option do %>
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= t('menu.menu_op7') %><span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li class="navOption"><%= link_to 'English', url_for(locale: :en) %></li>
+                <li class="navOption"><%= link_to 'Português', url_for(locale: :pt) %></li>
+            </ul>
+        </li>
+    <% end %>
+
 	<!--NAVIGATION-->
     <nav id="navigationbar" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
@@ -36,15 +81,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a id="navHome" href="/fatima/index">
+                <a id="navHome" href="#">
                     <img src="/images/Securis-Fatima17_logo_lat.png" class="img-responsive desktop-only" width="170" height="170" alt="SECURIS: Fatima logo">
                     <img src="/images/securis.svg" class="img-responsive mobile-medium" width="50" height="50" alt="SECURIS: Fatima logo">
                 </a>
             </div>
 
             <ul class="nav navbar-nav mobile-only" id="emergency_button">
-                <li><a href="/fatima/emergency">
-                    <img src="/images/emergency.svg" class="img-responsive" width="45" height="45" alt=""> 
+                <li><a href="/utility/sos">
+                    <img src="/images/emergency.svg" class="img-responsive" width="45" height="45" alt="SOS"> 
                 </a></li>
             </ul>
 
@@ -52,88 +97,43 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
                 <ul class="nav navbar-nav navbar-right mobile-only">
-                    <li class="navOption"><a href="/fatima/explore"><%= t('menu.menu_op1') %></a></li>
-                    <li class="navOption"><a href="/fatima/lady_of_fatima"><%= t('menu.menu_op2') %></a></li>
-                    <li class="navOption"><a href="/fatima/pray"><%= t('menu.menu_op3') %></a></li>
-                    <li class="navOption"><a href="/fatima/on_foot"><%= t('menu.menu_op4') %></a></li>
-                    <li class="navOption"><a href="/fatima/advice"><%= t('menu.menu_op5') %></a></li>
-                    <li class="navOption"><a href="/fatima/lost_people"><%= t('menu.menu_op6') %></a></li>
+                    <% menu_options.each do |option| %>
+                        <li id="navOption"><%= link_to option[:name], option[:link] %></li>
+                    <% end %>
+                    <%= yield :language_option %>
                 </ul>
 
 				<ul class="nav navbar-nav navbar-right desktop-medium">
-                    <li role="presentation" class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><%= t('menu.menu_op1') %></a>
-                        <ul class="dropdown-menu">
-                            <li class="navOption"><a href="/fatima/explore"><%= t('menu.submenu_op1_1') %></a></li>
-                            <li class="navOption"><a href="/fatima/attractions"><%= t('menu.submenu_op1_2') %></a></li>
-                            <li class="navOption"><a href="/fatima/contacts"><%= t('menu.submenu_op1_3') %></a></li>
-                        </ul>
-                    </li>
-                    <li role="presentation" class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><%= t('menu.menu_op2') %></a>
-                        <ul class="dropdown-menu">
-                            <li class="navOption"><a href="/fatima/lady_of_fatima"><%= t('menu.submenu_op2_1') %></a></li>
-                            <li class="navOption"><a href="/fatima/three_shepherds"><%= t('menu.submenu_op2_2') %></a></li>
-                            <li class="navOption"><a href="/fatima/appearances"><%= t('menu.submenu_op2_3') %></a></li>
-                        </ul>
-                    </li>
-                    <li role="presentation" class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><%= t('menu.menu_op3') %></a>
-                        <ul class="dropdown-menu">
-                            <li class="navOption"><a href="/fatima/pray"><%= t('menu.submenu_op3_1') %></a></li>
-                            <li class="navOption"><a href="/fatima/program"><%= t('menu.submenu_op3_2') %></a></li>
-                            <li class="navOption"><a href="/fatima/news"><%= t('menu.submenu_op3_3') %></a></li>
-                        </ul>
-                    </li>
-                    <li role="presentation" class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><%= t('menu.menu_op4') %></a>
-                        <ul class="dropdown-menu">
-                            <li class="navOption"><a href="/fatima/on_foot"><%= t('menu.submenu_op4_1') %></a></li>
-                            <li class="navOption"><a href="/fatima/car"><%= t('menu.submenu_op4_2') %></a></li>
-                            <li class="navOption"><a href="/fatima/public_transport"><%= t('menu.submenu_op4_3') %></a></li>
-                        </ul>
-                    </li>
-                    <li role="presentation" class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><%= t('menu.menu_op5') %></a>
-                        <ul class="dropdown-menu">
-                            <li class="navOption"><%= link_to t('menu.submenu_op5_1'), fatima_advice_path(locale: I18n.locale) %></li>
-                            <li class="navOption"><a href="/fatima/advice"><%= t('menu.submenu_op5_1') %></a></li>
-                            <li class="navOption"><a href="/fatima/emergency"><%= t('menu.submenu_op5_2') %></a></li>
-                            <li class="navOption"><a href="/fatima/lost_people"><%= t('menu.menu_op6') %></a></li>
-                            <li class="navOption"><a href="/fatima/official_contacts"><%= t('menu.submenu_op5_3') %></a></li>
-                        </ul>
-                    </li>
+                    <% menu_options.each do |option| %>
+                        <% if option[:submenu].empty? %>
+                            <li id="navOption"><%= link_to option[:name], option[:link] %></li>
+                        <% else %>
+                            <li role="presentation" class="dropdown" id="navOption">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><%= option[:name] %></a>
+                                <ul class="dropdown-menu">
+                                    <% option[:submenu].each do |sub_option| %>
+                                        <li id="submenuOption"><%= link_to sub_option[:name], sub_option[:link] %></li>
+                                    <% end %>
+                                </ul>
+                            </li>
+                        <% end %>
+                    <% end %>
+                    <%= yield :language_option %>
                 </ul>
 
-                <ul class="nav navbar-nav navbar-right">
-					<li role="presentation" class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= t('menu.menu_op7') %><span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li class="navOption"><%= link_to 'EN', root_path(locale: :en) %></li>
-                            <li class="navOption"><%= link_to 'PT', root_path(locale: :pt) %></li>
-                        </ul>
-                    </li>
-                </ul>
-                
             </div>
             
             <!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
 
-    <% if @sub_menu %>
+    <% if @submenu && menu_options[@submenu_val][:submenu].any? %>
         <nav id="submenu" class="navbar-static-top mobile-only">
             <div class="container-fluid">
                 <ul class="nav nav-submenu nav-pills">
-                    <li role="presentation" class="active">
-                        <a href="<%= @link1 %>" class="btn"><%= @title1 %></a>
-                    </li>
-                    <li role="presentation">
-                        <a href="<%= @link2 %>" class="btn"><%= @title2 %></a>
-                    </li>
-                    <li role="presentation">
-                        <a href="<%= @link3 %>" class="btn"><%= @title3 %></a>
-                    </li>
+                    <% menu_options[@submenu_val][:submenu].each do |option| %>
+                        <li id="submenuOption"><%= link_to option[:name], option[:link] %></li>
+                    <% end %>
                 </ul>
             </div>
         </nav>
@@ -142,8 +142,16 @@
 <section id="page_content">
     <div class="container-fluid text-justify">
 
+<%= yield :head %>
 
-        <% cookies[:educator_locale] %>
+        <% h = {hashes: "awesome1", ruby: "awesome"} %>
+        <p>Key: <%= h[:hashes] %> Value: <%= h[:ruby] %></p>
+
+        <% a = [{hashes: "awesome1", ruby: "awesome2"}, {hashes: "awesome3", ruby: "awesome4"}] %>
+        <% a.each do |policy| %>
+            <p>Key: <%= policy[:hashes] %> Value: <%= policy[:ruby] %></p>
+        <% end %>
+
         <%= yield %>
 
     </div>

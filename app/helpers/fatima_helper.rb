@@ -1,2 +1,0 @@
-module FatimaHelper
-end
