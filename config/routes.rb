@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  scope "(:locale)", locale: /en|pt/ do
+  scope "(:locale)", locale: /en|pt|de|es|fr|it|pl/ do
 
     get 'history/lady_of_fatima'
 
