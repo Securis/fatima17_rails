@@ -26,37 +26,37 @@
 <body>
 
     <% menu_options = [
-        {id: 1, name: t('menu.menu_op1'), link: explore_explore_path(locale: I18n.locale), 
+        {name: t('menu.menu_op1'), link: explore_explore_path(locale: I18n.locale), cont: "explore",
             submenu: [
-                {name: t('menu.submenu_op1_1'), link: explore_explore_path(locale: I18n.locale)}, 
-                {name: t('menu.submenu_op1_2'), link: explore_attractions_path(locale: I18n.locale)}, 
-                {name: t('menu.submenu_op1_3'), link: explore_contacts_path(locale: I18n.locale)}
+                {name: t('menu.submenu_op1_1'), link: explore_explore_path(locale: I18n.locale), action: "explore"}, 
+                {name: t('menu.submenu_op1_2'), link: explore_attractions_path(locale: I18n.locale), action: "attractions"}, 
+                {name: t('menu.submenu_op1_3'), link: explore_contacts_path(locale: I18n.locale), action: "contacts"}
             ]}, 
-        {id: 2, name: t('menu.menu_op2'), link: history_lady_of_fatima_path(locale: I18n.locale), 
+        {name: t('menu.menu_op2'), link: history_lady_of_fatima_path(locale: I18n.locale), cont: "history", 
             submenu: [
-                {name: t('menu.submenu_op2_1'), link: explore_explore_path(locale: I18n.locale)}, 
-                {name: t('menu.submenu_op2_2'), link: explore_attractions_path(locale: I18n.locale)}, 
-                {name: t('menu.submenu_op2_3'), link: explore_contacts_path(locale: I18n.locale)} 
+                {name: t('menu.submenu_op2_1'), link: history_lady_of_fatima_path(locale: I18n.locale), action: "lady_of_fatima"}, 
+                {name: t('menu.submenu_op2_2'), link: history_three_shepherds_path(locale: I18n.locale), action: "three_shepherds"}, 
+                {name: t('menu.submenu_op2_3'), link: history_appearances_path(locale: I18n.locale), action: "appearances"} 
             ]},
-        {id: 3, name: t('menu.menu_op3'), link: centennial_pray_path(locale: I18n.locale), 
+        {name: t('menu.menu_op3'), link: centennial_pray_path(locale: I18n.locale), cont: "centennial", 
             submenu: [
-                {name: t('menu.submenu_op3_1'), link: centennial_pray_path(locale: I18n.locale)},
-                {name: t('menu.submenu_op3_2'), link: centennial_program_path(locale: I18n.locale)}, 
-                {name: t('menu.submenu_op3_3'), link: centennial_news_path(locale: I18n.locale)}
+                {name: t('menu.submenu_op3_1'), link: centennial_pray_path(locale: I18n.locale), action: "pray"},
+                {name: t('menu.submenu_op3_2'), link: centennial_program_path(locale: I18n.locale), action: "program"}, 
+                {name: t('menu.submenu_op3_3'), link: centennial_news_path(locale: I18n.locale), action: "news"}
                 ]}, 
-        {id: 4, name: t('menu.menu_op4'), link: directions_foot_path(locale: I18n.locale), 
+        {name: t('menu.menu_op4'), link: directions_foot_path(locale: I18n.locale), cont: "directions", 
             submenu: [
-                {name: t('menu.submenu_op4_1'), link: directions_foot_path(locale: I18n.locale)},  
-                {name: t('menu.submenu_op4_2'), link: directions_car_path(locale: I18n.locale)}, 
-                {name: t('menu.submenu_op4_3'), link: directions_transports_path(locale: I18n.locale)}
+                {name: t('menu.submenu_op4_1'), link: directions_foot_path(locale: I18n.locale), action: "foot"},  
+                {name: t('menu.submenu_op4_2'), link: directions_car_path(locale: I18n.locale), action: "car"}, 
+                {name: t('menu.submenu_op4_3'), link: directions_transports_path(locale: I18n.locale), action: "transports"}
             ]}, 
-        {id: 5, name: t('menu.menu_op5'), link: security_advice_path(locale: I18n.locale), 
+        {name: t('menu.menu_op5'), link: security_advice_path(locale: I18n.locale), cont: "security",
             submenu: [
-                {name: t('menu.submenu_op5_1'), link: security_advice_path(locale: I18n.locale)}, 
-                {name: t('menu.submenu_op5_2'), link: security_emergency_path(locale: I18n.locale)}, 
-                {name: t('menu.submenu_op5_3'), link: security_official_contacts_path(locale: I18n.locale)}
+                {name: t('menu.submenu_op5_1'), link: security_advice_path(locale: I18n.locale), action: "advice"}, 
+                {name: t('menu.submenu_op5_2'), link: security_emergency_path(locale: I18n.locale), action: "emergency"}, 
+                {name: t('menu.submenu_op5_3'), link: security_official_contacts_path(locale: I18n.locale), action: "official_contacts"}
             ]}, 
-        {id: 6, name: t('menu.menu_op6'), link: lost_people_info_path(locale: I18n.locale), submenu: []} 
+        {name: t('menu.menu_op6'), link: lost_people_info_path(locale: I18n.locale), cont: "lost_people", submenu: []} 
     ] %>
     <% language_options = [
         {language: "English", dim: :en},
@@ -82,7 +82,7 @@
         </li>
     <% end %>
 
-	<!--NAVIGATION-->
+	<!--NAVIGATION MOBILE-->
     <nav id="navigationbar" class="navbar navbar-default navbar-fixed-top mobile-only">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -109,7 +109,7 @@
 
                 <ul class="nav navbar-nav navbar-right">
                     <% menu_options.each do |option| %>
-                        <li id="navOption"><%= link_to option[:name], option[:link] %></li>
+                        <li id="navOption" class="<%= 'active' if controller_name == option[:cont] %>"><%= link_to option[:name], option[:link] %></li>
                     <% end %>
                     <%= yield :language_option %>
                 </ul>
@@ -119,7 +119,7 @@
         </div><!-- /.container-fluid -->
     </nav>
 
-    <!--NAVIGATION-->
+    <!--NAVIGATION DESKTOP-->
     <nav id="navigationbar" class="navbar navbar-default desktop-medium">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -134,13 +134,13 @@
                 <ul class="nav navbar-nav navbar-right">
                     <% menu_options.each do |option| %>
                         <% if option[:submenu].empty? %>
-                            <li id="navOption"><%= link_to option[:name], option[:link] %></li>
+                            <li id="navOption" class="<%= 'active' if controller_name == option[:cont] %>"><%= link_to option[:name], option[:link] %></li>
                         <% else %>
-                            <li role="presentation" class="dropdown" id="navOption">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><%= option[:name] %></a>
+                            <li role="presentation" class="dropdown <%= 'active' if controller_name == option[:cont] %>" id="navOption">
+                                <a class="dropdown-toggle disabled" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false"><%= option[:name] %></a>
                                 <ul class="dropdown-menu">
                                     <% option[:submenu].each do |sub_option| %>
-                                        <li id="submenuOption"><%= link_to sub_option[:name], sub_option[:link] %></li>
+                                        <li id="submenuOption" class="<%= 'active' if action_name == sub_option[:action] %>"><%= link_to sub_option[:name], sub_option[:link] %></li>
                                     <% end %>
                                 </ul>
                             </li>
@@ -160,7 +160,7 @@
             <div class="container-fluid">
                 <ul class="nav nav-submenu nav-pills">
                     <% menu_options[@submenu_val][:submenu].each do |option| %>
-                        <li id="submenuOption"><%= link_to option[:name], option[:link] %></li>
+                        <li id="submenuOption" class="<%= 'active' if action_name == option[:action]%>"><%= link_to option[:name], option[:link] %></li>
                     <% end %>
                 </ul>
             </div>

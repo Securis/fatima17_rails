@@ -124,7 +124,7 @@ body {
     text-align:center;
 }
 #page_content {
-	padding-top: 120px;
+	padding-top: 140px;
 }
 
 @media (min-width: 768px) {
@@ -157,7 +157,8 @@ body {
 	}
 	.navbar-default .nav > .active > a,
 	.navbar-default .nav > .active > a:hover,
-	.navbar-default .nav > .active > a:focus {
+	.navbar-default .nav > .active > a:focus,
+	.navbar-default .nav .dropdown:hover .dropdown-menu > .active > a  {
 	    background-color: #f48942;
 	    color: white;
 	}
@@ -172,7 +173,7 @@ body {
 	    left: 3%;
 	}
 	#page_content {
-		padding-top: 60px;
+		padding-top: 0px;
 	}
 }
 
