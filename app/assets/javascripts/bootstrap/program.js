@@ -10,3 +10,5 @@ $(document).ready(function(){
         $("#day1-selector").removeClass('active');
     });
 });
+
+var vr = document.registerElement('v-r');
