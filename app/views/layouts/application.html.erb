@@ -58,7 +58,7 @@
             ]}, 
         {name: t('menu.menu_op6'), link: lost_people_info_path(locale: I18n.locale), cont: "lost_people", submenu: []} 
     ] %>
-    <% language_options = [
+    <% available_languages = [
         {language: "English", dim: :en},
         {language: "Português", dim: :pt},
         ] %>
@@ -67,7 +67,7 @@
         <li role="presentation" class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= t('menu.menu_op7') %><span class="caret"></span></a>
             <ul class="dropdown-menu">
-                <% language_options.each do |option| %>
+                <% available_languages.each do |option| %>
                     <% if I18n.locale == option[:dim] %>
                         <li class="navOption">
                             <%= link_to url_for(locale: option[:dim]) do %>
@@ -168,7 +168,7 @@
     <% end %>
 
 <section id="page_content">
-    <div class="container-fluid text-justify">
+    <div class="container-fluid">
 
         <%= yield %>
 
