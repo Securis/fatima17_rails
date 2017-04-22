@@ -1,4 +1,9 @@
-#timeline-container {
+.mobile-only .timeline-container {
+    //height: 100%;
+    padding-bottom: 100px;
+}
+
+.desktop-medium #timeline-container {
     padding-bottom: 100px;
 }
 .timeline-title {
@@ -7,7 +12,7 @@
 }
 .timeline-title h2{
     color: #f48942;
-    margin-top: 60px;
+    //margin-top: 60px;
 }
 .timeline {
   //position: relative;
@@ -19,20 +24,29 @@
   /* this is the vertical line */
   content: '';
   position: absolute;
-  top: 140px;
+  top: 240px;
   left: 25%;
-  margin-left: -1px;
-  height: 90%;
+  margin-left: -9px;
+  height: 203%;
   width: 2px;
   background: #84b5f1;
 }
+.timeline-small::before{
+  height: 173%;
+}
 @media only screen and (min-width: 768px) {
+  .timeline-title h2{
+    margin-top: 60px;
+  }
   .timeline {
     margin-top: 3em;
     //margin-bottom: 3em;
   }
   .timeline::before {
-    margin-left: -2px;
+  /* this is the vertical line */
+  height: 90%;
+  top: 140px;
+  margin-left: -2px;
   }
 }
 .timeline-item {
@@ -74,8 +88,19 @@
     height: 100%;
     //background-color: red;
     padding: 11px 15px;
-    line-height: 100px;
+    //line-height: 100px;
 }
 .timeline-text p {
   margin-bottom: 10px;
+}
+
+#timeline-day-selecter button {
+  width: 150px;
+  line-height: 1;
+  margin-bottom: 15px;
+}
+#timeline-day-selecter button h3,
+#timeline-day-selecter button h5 {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
