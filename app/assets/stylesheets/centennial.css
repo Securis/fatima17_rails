@@ -59,7 +59,12 @@ v-r {
     height: 100%;
     text-align: right;
     color: #f48942; 
+    right: 75px;
+}
+@media (min-width: 768px) {
+  .timeline-time {
     right: 72px;
+  }
 }
 .timeline-time:after {
     content: "";
