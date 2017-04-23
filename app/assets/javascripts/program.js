@@ -11,7 +11,7 @@
     });
 });*/
 
-$(document).ready(function() {
+document.addEventListener("turbolinks:load", function() {
     $('input[type=radio][name=program-day-selector]').change(function() {
         if (this.value == 'day1') {
             $("#timeline-container-day1").show();
