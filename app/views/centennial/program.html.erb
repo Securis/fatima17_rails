@@ -200,17 +200,23 @@
 <div class="mobile-only">
 
 	<div class="text-center">
-	<div class="btn-group" role="group" aria-label="..." id="timeline-day-selecter">
-		<button type="button" class="btn btn-large btn-default active" id="day1-selector">
-		  	<h3>Dia 1</h3>
-			<h5>12-05-2017</h5>
-		</button>
-		<button type="button" class="btn btn-large btn-default" id="day2-selector">
-		  	<h3>Dia 2</h3>
+	<div class="btn-group" data-toggle="buttons" id="timeline-day-selecter">
+      <label class="btn btn-large btn-default active" >
+        <input type="radio" name="program-day-selector" value="day1" id="day1-selector" checked>
+        <h3>Dia 1</h3>
+				<h5>12-05-2017</h5>
+      </label>
+      <label class="btn btn-large btn-default">
+        <input type="radio" name="program-day-selector" value="day2" id="day2-selector">
+        	<h3>Dia 2</h3>
 			<h5>13-05-2017</h5>
-		</button>
+      </label>
 	</div>
-</div>
+	</div>
+
+	<div class="text-center">
+
+	</div>
 
 	<div class = "row timeline-container" id="timeline-container-day1">
 		<%= yield :timeline_day1 %>
