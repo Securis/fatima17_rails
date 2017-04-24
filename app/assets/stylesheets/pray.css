@@ -1,0 +1,13 @@
+#pray-info {
+	display: flex;
+}
+
+.STUFF {
+	flex: 1;
+	overflow-y:hidden;
+}
+
+#prayers {
+	flex: 5;
+	overflow-y: auto;
+}
