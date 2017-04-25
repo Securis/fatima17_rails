@@ -1,13 +1,34 @@
-#pray-info {
-	display: flex;
+#cover #prayer {
+	padding-top:250px;
+    background-image: url('/images/pray/pray.jpg');
+	position: relative;
+	width: 100%;
+	min-height: auto;
+	background-size: cover;
+	background-position: center;
+	text-align: center;
+	color: white;
 }
 
-.STUFF {
-	flex: 1;
-	overflow-y:hidden;
+.prayer-set {
+	padding-bottom: 20px;
 }
 
-#prayers {
-	flex: 5;
-	overflow-y: auto;
+.prayer-set a,
+.prayer-set a:hover {
+	color: #333;
 }
+
+.prayer-set a h4 {
+	padding-left: 15px;
+	padding-top: 10px;
+}
+
+.prayer-set .collapse p {
+	padding-left: 30px;
+	line-height: 150%;
+}
+
+//https://www.pexels.com/photo/belief-bible-book-business-267559/
+//https://www.pexels.com/photo/priest-holding-hostia-161081/
+//https://www.pexels.com/photo/beads-cross-prayer-rosary-236336/
