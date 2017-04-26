@@ -20,6 +20,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 pt:
+    index:
+        menu_op1: "Características"
+        menu_op2: "Transferência"
+        menu_op3: "Equipa"
+        menu_op4: "Contacto"
+        menu_op5: "Linguagem"
     menu:
         menu_op1: "Explorar"
         menu_op2: "História"

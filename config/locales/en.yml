@@ -20,6 +20,14 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+    index:
+        menu_op1: "Features"
+        menu_op2: "Download"
+        menu_op3: "Team"
+        menu_op4: "Contact"
+        menu_op5: "Language"
+        header_title: ""
+        header_text: ""
     menu:
         menu_op1: "Explore"
         menu_op2: "History"

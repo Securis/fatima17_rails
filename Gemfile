@@ -40,6 +40,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'rails-i18n', '~> 4.0.0' # for Rails 4
 gem 'font-awesome-rails', '~> 4.1.0.0'
+gem "scrollreveal-rails"  
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

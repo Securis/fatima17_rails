@@ -1,12 +1,389 @@
 <!DOCTYPE html>
-    <html>
-        <head>
-          <title>Index</title>
-          <%= stylesheet_link_tag "index", :media => "all" %>
-          <%= javascript_include_tag "index" %>
-          <%= csrf_meta_tags %>
-        </head>
-        <body>
-            <%= yield %>
-        </body>
-    </html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:site_name" content="Securis"/>
+    <meta property="og:title" content="Securis: Fatima"/>
+    <meta property="og:description" content="All the information you need for the celebrations of the Centennial of the apparitions of Fatima."/>
+    <meta property="og:image" content="/images/index/securis.png">
+    <meta property="og:url" content="https://securis.github.io/">
+    <meta property="og:type" content="site"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <title>SECURIS</title>
+
+    <%= stylesheet_link_tag "index", :media => "all" %>
+    <%= javascript_include_tag "index" %>
+    <%= csrf_meta_tags %>
+
+</head>
+<body id="index" data-spy="scroll" data-target=".navbar" data-offset="0">
+
+
+    <% available_languages = [
+        {language: "English", dim: :en},
+        {language: "Português", dim: :pt},
+        ] %>
+
+    <% content_for :language_option do %>
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= t('menu.menu_op7') %><span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <% available_languages.each do |option| %>
+                    <% if I18n.locale == option[:dim] %>
+                        <li class="navOption">
+                            <%= link_to url_for(locale: option[:dim]) do %>
+                                <%= option[:language] %> <i class="fa fa-check" aria-hidden="true"></i>
+                            <% end %>
+                        </li>
+                    <% else %>
+                        <li class="navOption"><%= link_to option[:language], url_for(locale: option[:dim]) %></li>
+                    <% end %>   
+                <% end %>
+            </ul>
+        </li>
+    <% end %>
+
+    <!--NAVIGATION-->
+    <nav id="navigationbar" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="pull-left" id="navHome" href="#cover">
+                    <img src="/images/index/Securis-Fátima17_logo_lat.png" class="img-responsive" width="170" height="170" alt="SECURIS: Fatima logo">
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="navOption"><a class="page-scroll" href="#features">
+                        <%= t('index.menu_op1') %>
+                    </a></li>
+                    <li class="navOption"><a class="page-scroll" href="#download">
+                        <%= t('index.menu_op2') %>
+                    </a></li>
+                    <li class="navOption"><a class="page-scroll" href="#securis">
+                        SECURIS
+                    </a></li>
+                    <li class="navOption"><a class="page-scroll" href="#team">
+                        <%= t('index.menu_op3') %>
+                    </a></li>
+                    <li class="navOption"><a class="page-scroll" href="#contact">
+                        <%= t('index.menu_op4') %>
+                    </a></li>
+                    <%= yield :language_option %>
+                </ul>
+
+            </div>
+            <!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <!--COVER-->
+    <header id="cover">
+        <div class="container">
+            <div class="row header-content">
+              <img src="/images/index/securis.svg" class="img-responsive center-block" width="150" height="150" alt="SECURIS: Fatima logo">
+                <div class="col-lg-6 col-lg-offset-3 text-center header-text">
+                  <h1 id="homeHeading">
+                      <span class="portugues">A tua peregrinação a Fátima começa <a href="#features">AQUI</a>!</span>
+                  </h1>
+                  <hr>
+                      <span class="portugues">
+                          <p>Prepara-te para as celebrações do Centenário das Aparições em Fátima. Toda a informação que precisas está nas tuas mãos.</p>
+                      </span>
+                </div>
+            </div>
+                <div class="cover-image-source bottom-align-text">
+                    <span class="portugues">
+                        <p><a href="https://commons.wikimedia.org/wiki/File:SantuariodeFatima.jpg">Fonte da Imagem</a></p>
+                    </span>
+                </div>
+        </div>
+    </header>
+
+    <section id="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center header-text">
+                    <h2>
+                        <span class="portugues">Tudo o que precisas, num só sítio!</span>
+                    </h2>
+                    <hr class="dark">
+                    <p class="text-faded">
+                        <span class="portugues">Descobre o que temos para ti!</span>
+                    </p>
+                </div>
+            </div>
+
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+                        <div class="device-container">
+                            <div class="device">
+                                <div class="screen">
+                                    <img src="/images/index/features/app.jpg" class="img-responsive" alt=""> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-12">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="feature-item">
+                                        <img src="/images/index/features/map.svg" class="img-responsive feature-icon" alt=""> 
+                                        <h3>
+                                            <span class="portugues">Explorar</span>
+                                        </h3>
+                                        <p class="text-muted">
+                                            <span class="portugues">Mapa interactivo de Fátima contendo os recursos principais, pontos de interesse e contactos relevantes.</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="feature-item">
+                                        <img src="/images/index/features/santuario.svg" class="img-responsive feature-icon" alt=""> 
+                                        <h3>
+                                            <span class="portugues">História</span>
+                                        </h3>
+                                        <p class="text-muted">
+                                            <span class="portugues">Conhece a história das Aparições de Fátima.</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="feature-item">
+                                        <img src="/images/index/features/prayer_fs.svg" class="img-responsive feature-icon" alt=""> 
+                                        <h3>
+                                            <span class="portugues">Centenário</span>
+                                        </h3>
+                                        <p class="text-muted">
+                                            <span class="portugues">Programa, notícias e conteúdos variados relacionado com as celebrações do Centenário.</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="feature-item">
+                                        <img src="/images/index/features/car.svg" class="img-responsive feature-icon" alt=""> 
+                                        <h3>
+                                            <span class="portugues">Direções</span>
+                                        </h3>
+                                        <p class="text-muted">
+                                            <span class="portugues">Como chegar a Fátima, quer a pé, de carro ou utilizando os transportes públicos.</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="feature-item">
+                                        <img src="/images/index/features/segurança.svg" class="img-responsive feature-icon" alt=""> 
+                                        <h3>
+                                            <span class="portugues">Segurança</span>
+                                        </h3>
+                                        <p class="text-muted">
+                                            <span class="portugues">Conselhos de segurança, o que fazer numa emergência e quem contactar.</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="feature-item">
+                                        <img src="/images/index/features/language.svg" class="img-responsive feature-icon" alt=""> 
+                                        <h3>
+                                            <span class="portugues">Multi-linguística</span>
+                                        </h3>
+                                        <p class="text-muted">
+                                            <span class="portugues">Disponível em Português e Inglês; outras linguagens disponíveis brevemente.</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+        </div>
+    </section>
+
+    <section class="blueBG" id="download">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <div class="header-text">
+                        <h2 class="section-heading">
+                            <span class="portugues">Experimenta e surpreende-te!</span>
+                        </h2>
+                        <hr class="light">
+                        <p>
+                            <span class="portugues">Brevemente disponível para Android ou através do website.</span>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-8 col-lg-offset-2 text-center">
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="download-link">
+                                    <a href="" class="btn btn-warning btn-lg">
+                                        <span class="portugues"><i class="fa fa-download" aria-hidden="true"></i> Transferir aplicação</span>
+                                    </a>
+                                </div>
+                              </div>
+                            <div class="col-md-6">
+                                <div class="download-link">
+                                    <a href="/fatima/explore/explore" class="btn btn-warning btn-lg">
+                                        <span class="portugues"><i class="fa fa-globe" aria-hidden="true"></i> Visitar página</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="securis">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center text-content">
+                    <h2 class="section-heading">
+                        <span class="portugues">Disfruta da tua viagem!</span>
+                    </h2>
+                    <hr class="light">
+                    <p class="text-faded">
+                        <span class="portugues">E deixa as preocupações connosco. A SECURIS preocupa-se com a tua segurança, disponibilizando ferramentas e acesso a informação, para poderes relaxar e aproveitar a tua viagem.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="team">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">
+                        <span class="portugues">A nossa equipa</span>
+                    </h2>
+                    <hr class="dark">
+                </div>
+
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <div class="row">
+
+                    <div class="col-md-4">
+                        <div class="team-member">
+                                <img src="/images/index/team/pedro.jpg" class="img-responsive img-circle" alt="">
+                            <h4>Pedro Costa</h4>
+                            <p class="text-muted">Business Developer</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="team-member">
+                                <img src="/images/index/team/ines.jpg" class="img-responsive img-circle" alt="">
+                            <h4>Inês Coelho</h4>
+                            <p class="text-muted">Software Engineer</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="team-member">
+                                <img src="/images/index/team/ricardo.jpg" class="img-responsive img-circle" alt="">
+                            <h4>Ricardo Silva</h4>
+                            <p class="text-muted">Software Developer</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2>
+                        <span class="portugues">Prémios</span>
+                    </h2>
+
+                    <div class="row" id="list-awards">
+                        <div class="col-md-3">
+                            <div class="award">
+                                <img src="/images/index/awards/startupvoucher.jpg" alt="..." class="img-responsive img-rounded">
+                            </div>
+                          </div>
+                        <div class="col-md-3">
+                            <div class="award">
+                                <img src="/images/index/awards/turismo.jpg" alt="..." class="img-responsive img-rounded">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="award">
+                                <img src="/images/index/awards/spin.png" alt="..." class="img-responsive img-rounded">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="award">
+                                <img src="/images/index/awards/poliempreende.png" alt="..." class="img-responsive img-rounded">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="darkBlueBG" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">
+                        <span class="portugues">Contacta-nos!</span>
+                    </h2>
+                    <hr class="primary">
+                    <p>
+                        <span class="portugues">Entra em contacto connosco, quer seja para apresentares sugestões, dar a tua opinião, ou apenas dizer olá!</span>
+                    </p>
+
+                    <h3>
+                        <a href="projectsecuris@gmail.com">projectsecuris@gmail.com</a>
+                    </h3>
+                </div>
+
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2>
+                        <span class="portugues">Segue-nos:</span>
+                    </h2>
+
+                    <ul class="list-inline list-social">
+                        <li class="social-media" id="twitter">
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li class="social-media" id="facebook">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</body>
