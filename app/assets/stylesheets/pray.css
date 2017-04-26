@@ -1,43 +1,6 @@
 #cover #prayer {
-	padding-top:250px;
-    background-image: url('/images/pray/pray.jpg');
-	position: relative;
-	width: 100%;
-	min-height: auto;
-	background-size: cover;
-	background-position: center;
+	background-image: url('/images/pray/pray.jpg');
 }
-#sidebar-outer {
-    //margin-top: 150px;
-    position: relative;
-}
-#sidebar {
-   position: fixed;
-   width: 25%;
-}
-#sidebar a{
-	position: relative;
-	top: -25px;
-	right: 5px;
-	color: white;
-	text-align: right;
-}
-@media (min-width: 768px) {
-  #sidebar {
-    width: 213px; /* 632 * .25 */
-  }
-}
-@media (min-width: 992px) {
-  #sidebar {
-    width: 213px; /* 852 * .25 */
-  }
-}
-@media (min-width: 1200px) {
-  #sidebar {
-    width: 263px; /* 1052 * .25 */
-  }
-} 
-
 .prayer-set {
 	padding-bottom: 20px;
 }
@@ -46,13 +9,11 @@
 .prayer-set a:hover {
 	color: #333;
 }
-
 .prayer-set a h4 {
 	padding-left: 15px;
 	padding-top: 10px;
 	line-height: 150%;
 }
-
 .prayer-set .collapse p {
 	padding-left: 30px;
 	line-height: 150%;

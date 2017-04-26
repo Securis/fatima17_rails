@@ -2,11 +2,13 @@ Rails.application.routes.draw do
   
   scope "(:locale)", locale: /en|pt|de|es|fr|it|pl/ do
 
+    scope '/fatima' do
+
     get 'history/lady_of_fatima'
 
     get 'history/three_shepherds'
 
-    get 'history/appearances'
+    get 'history/apparitions'
 
     get 'utility/sos'
 
@@ -89,5 +91,7 @@ Rails.application.routes.draw do
     #     # (app/controllers/admin/products_controller.rb)
     #     resources :products
     #   end
-  end
+
+        end
+    end
 end

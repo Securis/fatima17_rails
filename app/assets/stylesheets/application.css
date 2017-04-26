@@ -41,6 +41,51 @@ body {
 	.desktop-only, .desktop-medium {display:block;}
 }
 
+/*COVER AND SIDE IMAGES*/
+#cover .cover-content {
+	padding-top:250px;
+	position: relative;
+	width: 100%;
+	min-height: auto;
+	background-size: cover;
+	background-position: center;
+}
+#cover .cover-content a {
+	position: absolute;
+    right: 0;
+    color: white;
+    margin-top: -25px;
+}
+#sidebar-outer {
+    position: relative;
+}
+#sidebar {
+   position: fixed;
+   width: 25%;
+}
+#sidebar a{
+	position: relative;
+	top: -25px;
+	right: 5px;
+	color: white;
+	text-align: right;
+}
+@media (min-width: 768px) {
+  #sidebar {
+    width: 213px; /* 632 * .25 */
+  }
+}
+@media (min-width: 992px) {
+  #sidebar {
+    width: 213px; /* 852 * .25 */
+  }
+}
+@media (min-width: 1200px) {
+  #sidebar {
+    width: 263px; /* 1052 * .25 */
+  }
+} 
+
 /*NAVBAR*/
 .navbar-default,
 #submenu {

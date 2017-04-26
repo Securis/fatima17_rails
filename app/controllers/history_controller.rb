@@ -13,6 +13,6 @@ class HistoryController < ApplicationController
   def three_shepherds
   end
 
-  def appearances
+  def apparitions
   end
 end
