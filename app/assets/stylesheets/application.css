@@ -42,7 +42,13 @@ body {
 }
 
 /*COVER AND SIDE IMAGES*/
+#cover {
+	//margin-top: 100px;
+	padding-top:90px;
+}
+
 #cover .cover-content {
+	//margin-top: 100px;
 	padding-top:250px;
 	position: relative;
 	width: 100%;
