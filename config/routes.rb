@@ -1,47 +1,51 @@
 Rails.application.routes.draw do
   
+  get 'landing_page/index'
+
   scope "(:locale)", locale: /en|pt|de|es|fr|it|pl/ do
 
     scope '/fatima' do
 
-    get 'history/lady_of_fatima'
+        get 'history/lady_of_fatima'
 
-    get 'history/three_shepherds'
+        get 'history/three_shepherds'
 
-    get 'history/apparitions'
+        get 'history/apparitions'
 
-    get 'utility/sos'
+        get 'utility/sos'
 
-    get 'lost_people/info'
+        get 'lost_people/info'
 
-    get 'security/advice'
+        get 'security/advice'
 
-    get 'security/emergency'
+        get 'security/emergency'
 
-    get 'security/official_contacts'
+        get 'security/official_contacts'
 
-    get 'directions/foot'
+        get 'directions/foot'
 
-    get 'directions/car'
+        get 'directions/car'
 
-    get 'directions/transports'
+        get 'directions/transports'
 
-    get 'centennial/pray'
+        get 'centennial/pray'
 
-    get 'centennial/program'
+        get 'centennial/program'
 
-    get 'centennial/news'
+        get 'centennial/news'
 
-    get 'explore/explore'
+        get 'explore/explore'
 
-    get 'explore/attractions'
+        get 'explore/attractions'
 
-    get 'explore/contacts'
+        get 'explore/contacts'
+
+    end
     # The priority is based upon order of creation: first created -> highest priority.
     # See how all your routes lay out with "rake routes".
 
     # You can have the root of your site routed with "root"
-    root 'explore#explore'
+    root 'landing_page#index'
 
     # Example of regular route:
     #   get 'products/:id' => 'catalog#view'
@@ -92,6 +96,6 @@ Rails.application.routes.draw do
     #     resources :products
     #   end
 
-        end
+        
     end
 end
