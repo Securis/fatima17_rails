@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   scope "(:locale)", locale: /en|pt|de|es|fr|it|pl/ do
 
+    get '/fatima', to: 'explore#explore', as: :fatima_root
+
     scope '/fatima' do
 
         get 'history/lady_of_fatima'
@@ -39,7 +41,6 @@ Rails.application.routes.draw do
         get 'explore/attractions'
 
         get 'explore/contacts'
-
     end
     # The priority is based upon order of creation: first created -> highest priority.
     # See how all your routes lay out with "rake routes".
