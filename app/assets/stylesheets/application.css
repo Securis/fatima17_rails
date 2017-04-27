@@ -270,3 +270,13 @@ footer p a:hover{
 .attraction {
 	margin-bottom: 25px;
 }
+
+#emergency-button {
+	padding-top: 50px;
+	padding-bottom: 150px;
+}
+
+#emergency-button .btn {
+    white-space: normal !important;
+    word-wrap: break-word;
+}
