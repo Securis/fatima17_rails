@@ -266,3 +266,7 @@ footer p a{
 footer p a:hover{
 	color: #f48942;
 }
+
+.attraction {
+	margin-bottom: 25px;
+}
