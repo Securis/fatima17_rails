@@ -41,8 +41,7 @@
         {name: t('menu.menu_op3'), link: centennial_pray_path(locale: I18n.locale), cont: "centennial", 
             submenu: [
                 {name: t('menu.submenu_op3_1'), link: centennial_pray_path(locale: I18n.locale), action: "pray"},
-                {name: t('menu.submenu_op3_2'), link: centennial_program_path(locale: I18n.locale), action: "program"}, 
-                {name: t('menu.submenu_op3_3'), link: centennial_news_path(locale: I18n.locale), action: "news"}
+                {name: t('menu.submenu_op3_2'), link: centennial_program_path(locale: I18n.locale), action: "program"}
                 ]}, 
         {name: t('menu.menu_op4'), link: directions_foot_path(locale: I18n.locale), cont: "directions", 
             submenu: [
@@ -55,8 +54,7 @@
                 {name: t('menu.submenu_op5_1'), link: security_advice_path(locale: I18n.locale), action: "advice"}, 
                 {name: t('menu.submenu_op5_2'), link: security_emergency_path(locale: I18n.locale), action: "emergency"}, 
                 {name: t('menu.submenu_op5_3'), link: security_official_contacts_path(locale: I18n.locale), action: "official_contacts"}
-            ]}, 
-        {name: t('menu.menu_op6'), link: lost_people_info_path(locale: I18n.locale), cont: "lost_people", submenu: []} 
+            ]}
     ] %>
     <% available_languages = [
         {language: "English", dim: :en},
@@ -179,19 +177,29 @@
                 </div>
                 <div class="col-md-4 col-sm-6 col-xs-8">
                     <h4><%= t('footer.mailing_list') %></h4>
-                    <form class="form-inline">
-                      <div class="form-group">
-                        <label for="subscribeEmail"><%= t('footer.email') %></label>
-                        <input type="email" class="form-control" id="subscribeEmail" placeholder="<%= t('footer.enter_email') %>">
+
+                    <!-- Begin MailChimp Signup Form -->
+                    <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+
+                    <form action="//github.us15.list-manage.com/subscribe/post?u=f70103c5f0796c2c0153ba0ef&amp;id=b6650650b2" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline" target="_blank" novalidate>
+                      <div class="form-group" id="mc_embed_signup_scroll">
+                        <label for="mce-EMAIL"><%= t('footer.email') %></label>
+
+                        <input type="email" value="" name="EMAIL" class="form-control email" id="mce-EMAIL" placeholder="<%= t('footer.enter_email') %>" required>
+                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_f70103c5f0796c2c0153ba0ef_b6650650b2" tabindex="-1" value=""></div>
                       </div>
-                      <button type="submit" class="btn btn-default"><%= t('footer.subscribe') %></button>
+                      <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="btn btn-default"><%= t('footer.subscribe') %></button>
                     </form>
+                
+                    <!--End mc_embed_signup-->
                 </div>
+
                 <div class="col-md-4 col-sm-3 col-xs-12">
                     <h4><%= t('footer.contact') %></h4>
-                    <p><a href="#"><i class="fa fa-envelope"></i> Email</a> | 
-                    <a href="#"><i class="fa fa-twitter"></i> Twitter</a> | 
-                    <a href="#"><i class="fa fa-facebook"></i> Facebook</a></p>
+                    <p><a href="mailto:projetosecuris@gmail.com" target="_top"><i class="fa fa-envelope"></i> Email</a>
+                    <a href="https://twitter.com/SecurisFatima17" target="_blank"><i class="fa fa-twitter"></i> Twitter</a> | 
+                    <a href="https://www.facebook.com/securis.fatima/" target="_blank"><i class="fa fa-facebook"></i> Facebook</a></p>
                 </div>
             </div>
 
