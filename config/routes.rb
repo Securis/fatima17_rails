@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   get 'landing_page/index'
 
-  scope "(:locale)", locale: /en|pt|de|es|fr|it|pl/ do
+  scope "(:locale)", locale: /en|pt/ do
 
     get '/fatima', to: 'explore#explore', as: :fatima_root
 

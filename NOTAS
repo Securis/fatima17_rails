@@ -34,3 +34,19 @@
 					<p>Basílica integrante do Santuário de Fátima, onde repousam os restos mortais dos Três Pastorinhos. Integra o Santuário de Fátima e ergue-se no local onde, a 13 de Maio de 1917, os Três Pastorinhos brincavam, quando avistaram o relâmpago que antecedeu a primeira Aparição de Nossa Senhora. Sobre a entrada principal da Basílica, encontra-se um mosaico representativo da Sacratíssima Trindade a coroar Nossa Senhora. Os túmulos dos três pastorinhos encontram-se no extremo direito (Francisco) e esquerdo (Jacinta e Lúcia) do transepto.</p>
 
 					<p>Foi no local onde se encontra a Capelinha que Nossa Senhora falou aos pastorinhos. Das seis aparições da Virgem Maria, cinco aconteceram neste local – Maio, Junho, Julho, Setembro e Outubro – onde, por indicação da Senhora, haveria de ser construída uma capela em sua honra. Embora sujeita a ligeiras alterações, a Capelinha das Aparições mantém os traços originais e característicos de uma ermida popular. O alpendre atual foi inaugurado aquando da primeira vinda de João Paulo II ao Santuário de Fátima, nos dias 12 e 13 de maio de 1982. A peanha onde se encontra a Imagem de Nossa Senhora marca o sítio onde estava a pequena azinheira sobre a qual a Senhora do Rosário apareceu.</p>
+
+
+
+					<%= link_to "Comment wall", :anchor => "wall" %>
+
+					<%= class=\"active\" if @page_tab == "home" %>>
+
+
+					                    <% if :anchor == "#features" %>
+                          <li class="active"><a class="page-scroll" href="#features">
+                        <%= t('index.menu_op1') %>
+                    </a></li>
+
+
+                    <li class="<% 'active' if params[:anchor] == "features" %>"><a class="page-scroll" href="#features">
+                        <%= t('index.menu_op1') %></a></li> 

@@ -1,3 +1,18 @@
+
+    $(function() {
+      window.scrollReveal = new scrollReveal();
+    });
+
+
+//LATERAL IMAGES
+$(function() {
+    $(window).resize(function() {
+        $('#width-placeholder').html($("#sidebar").width());
+    }).resize();
+});
+
+
+//PROGRAM
 document.addEventListener("turbolinks:load", function() {
     $('input[type=radio][name=program-day-selector]').change(function() {
         if (this.value == 'day1') {

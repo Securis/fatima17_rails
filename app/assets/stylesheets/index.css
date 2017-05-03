@@ -15,6 +15,11 @@
  *= require font-awesome
  */
 
+.english {
+	display:none;
+}
+
+
 #index hr {
   border-color: white;
   border-width: 2px;
@@ -25,22 +30,13 @@
   border-color: black;
 }
 
-#index hr.orange {
-  border-color: #f48942;
-}
-
 #index p {
   font-size: 20px;
   line-height: 1.5;
   margin-bottom: 20px;
 }
-
-#index html,
-#index body {
-  height: 100%;
-  width: 100%;
-  font-family: 'Lato', sans-serif;
-  letter-spacing: 1px;
+#index .header-text {
+	padding: 0 0 30px;
 }
 
 #index section {
@@ -52,18 +48,24 @@
 	background-color: #84b5f1;
 	color: white;
 }
+
 #index .darkBlueBG {
   background-color: #1a5193;
   color: white;
 }
 
+/*#index .index-nav {
+	background-color: black;
+}
 
 /*NAVBAR*/
 #index .navbar-default {
   background-color: #1a5193;
+  //color: white;
   border-color: rgba(34, 34, 34, 0.05);
   width: 100%;
 }
+
 #index .navbar-default .navbar-header .navbar-toggle .icon-bar{
 	background-color: white;
 }
@@ -141,7 +143,7 @@
 }
 
 /*HEADER*/
-header {
+#index header {
 	position: relative;
 	width: 100%;
 	min-height: auto;
@@ -151,61 +153,61 @@ header {
 	text-align: center;
 	color: white;
 	}
-header .header-text {
+#index header .header-content .header-text {
 	//position: relative;
 	//text-align: center;
-	padding: 0 0 30px;
+	padding: 0px;
 	//width: 100%;
 }
-header .header-content .header-text h1 {
+#index header .header-content .header-text h1 {
 	font-weight: 600;
 	font-variant: small-caps;
-	margin-top: -50px;
+	//margin-top: 0;
 	//margin-bottom: 0;
 	font-size: 40px;
 }
 
-header .header-content .header-text hr {
+#index header .header-content .header-text hr {
   margin: 30px auto;
 }
 
-header .header-content .header-text p {
+#index header .header-content .header-text p {
   font-weight: 400;
   color: rgba(255, 255, 255, 0.8);
   font-size: 20px;
   //margin-bottom: 50px;
   background-color: rgba(0, 0, 0, 0.4);
 }
-header h1 a,
-header .bottom-align-text a{
+#index header h1 a,
+#index header .bottom-align-text a{
 	color: white;
 }
-header h1 a:hover{
+#index header h1 a:hover{
 	color: #f48942;
 }
-header .bottom-align-text {
+#index header .bottom-align-text {
     position: absolute;
     bottom: 0;
     right: 0;
     padding-right: 20px;
 }
-header .bottom-align-text p{
+#index header .bottom-align-text p{
   font-weight: 400;
   color: white;
   font-size: 12px;
 }
 @media (min-width: 768px) {
-  header {
+  #index header {
     min-height: 100%;
   }
-  header .header-text {
+  #index header .header-text {
 	padding: 100px 0 0 0;
   }
-  header .header-content .header-text h1 {
+  #index header .header-content .header-text h1 {
 	font-weight: 800;
 	font-size: 50px;
   }
-  header .header-content .header-text p {
+  #index header .header-content .header-text p {
 	  font-weight: 500;
 	  font-size: 24px;
 	}
@@ -213,28 +215,28 @@ header .bottom-align-text p{
  }
 
 /*FEATURES*/
-.screen img{
+#index .screen img{
 	margin:0 auto;
 	padding-top: 50px;
 }
 
-.feature-item{text-align:center;margin-bottom:50px; }
-.feature-item img{margin: 0 auto;padding: 20px 0 0px 0;}
-.feature-item h3{
+#index .feature-item{text-align:center;margin-bottom:50px; }
+#index .feature-item img{margin: 0 auto;padding: 20px 0 0px 0;}
+#index .feature-item h3{
 	margin-top:10px;
 	margin-bottom:0;
 	text-transform:none}
 
-.feature-icon {
+#index .feature-icon {
 	width: 65px;
 	height: 85px;
 }
 
 /*DOWNLOAD*/
-.download-link{text-align:center;margin-bottom:25px; }
+#index .download-link{text-align:center;margin-bottom:25px; }
 
  /*SECURIS*/
-#securis {
+#index #securis {
 	position: relative;
 	width: 100%;
 	min-height: auto;
@@ -245,48 +247,47 @@ header .bottom-align-text p{
 	color: white;
 }
 
-#securis .text-content {
+#index #securis .text-content {
 	padding: 50px;
 }
 
-#securis .text-content p{
+#index #securis .text-content p{
 	background-color: rgba(0, 0, 0, 0.4);
 }
 
 @media (min-width: 768px) {
-  #securis {
+  #index #securis {
     min-height: 100%;
   }
-  #securis .text-content {
+  #index #securis .text-content {
 	padding: 120px;
   }
 }
 
-
 /*TEAM*/
-.team-member{
+#index .team-member{
 	text-align:center;
 	margin-bottom:50px}
-.team-member img{
+#index .team-member img{
 	margin:0 auto;
 	border:7px solid black}
-.team-member h4{
+#index .team-member h4{
 	margin-top:25px;
 	margin-bottom:0;
 	text-transform:none}
-.team-member p{
+#index .team-member p{
 	margin-top:0
 	}aside
 
-.award{text-align:center;margin-bottom:50px; }
-.award img{margin: 0 auto;padding: 15px 0 15px 0;}
+#index .award{text-align:center;margin-bottom:50px; }
+#index .award img{margin: 0 auto;padding: 15px 0 15px 0;}
 
 /*CONTACTS*/
-#contact h3 a{
+#index #contact h3 a{
 	color: #f48942;
 }
 
-.social-media a {
+#index .social-media a {
 	display:block;
 	height:80px;
 	width:80px;
@@ -296,9 +297,7 @@ header .bottom-align-text p{
 	color:white;
 }
 
-#twitter a{background-color:#1da1f2}
-#twitter a:hover{background-color:#0d95e8}
-#facebook a{background-color:#3b5998}
-#facebook a:hover{background-color:#344e86}
-#google-plus a{background-color:#dd4b39}
-#google-plus a:hover{background-color:#d73925}
+#index #twitter a{background-color:#1da1f2}
+#index #twitter a:hover{background-color:#0d95e8}
+#index #facebook a{background-color:#3b5998}
+#index #facebook a:hover{background-color:#344e86}

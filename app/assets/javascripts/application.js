@@ -15,17 +15,3 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-
-$(function() {
-	//home button (logo)
-    $("#navHome").click(function() {
-        // remove classes from all
-        $("li").removeClass("active");
-    });
-});
-
-$(function() {
-    $(window).resize(function() {
-        $('#width-placeholder').html($("#sidebar").width());
-    }).resize();
-});

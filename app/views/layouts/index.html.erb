@@ -16,13 +16,14 @@
 
     <title>SECURIS</title>
 
-    <%= stylesheet_link_tag "index", :media => "all" %>
-    <%= javascript_include_tag "index" %>
+    <%= stylesheet_link_tag 'index', media: 'all', 'data-turbolinks-track' => true %>
+
+    <%= javascript_include_tag 'index', 'data-turbolinks-track' => true %>
+    
     <%= csrf_meta_tags %>
 
 </head>
 <body id="index" data-spy="scroll" data-target=".navbar" data-offset="0">
-
 
     <% available_languages = [
         {language: "English", dim: :en},
@@ -35,13 +36,13 @@
             <ul class="dropdown-menu">
                 <% available_languages.each do |option| %>
                     <% if I18n.locale == option[:dim] %>
-                        <li class="navOption">
+                        <li>
                             <%= link_to url_for(locale: option[:dim]) do %>
                                 <%= option[:language] %> <i class="fa fa-check" aria-hidden="true"></i>
                             <% end %>
                         </li>
                     <% else %>
-                        <li class="navOption"><%= link_to option[:language], url_for(locale: option[:dim]) %></li>
+                        <li><%= link_to option[:language], url_for(locale: option[:dim]) %></li>
                     <% end %>   
                 <% end %>
             </ul>
@@ -49,7 +50,7 @@
     <% end %>
 
     <!--NAVIGATION-->
-    <nav id="indexnavigationbar" class="navbar navbar-default navbar-fixed-top">
+    <nav id="indexnav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -68,19 +69,19 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="navOption"><a class="page-scroll" href="#features">
+                    <li class="indexNavOption"><a class="page-scroll" href="#features" data-turbolinks="false">
                         <%= t('index.menu_op1') %>
-                    </a></li>
-                    <li class="navOption"><a class="page-scroll" href="#download">
+                    </a></li>                    
+                    <li class="indexNavOption"><a class="page-scroll" href="#download" data-turbolinks="false">
                         <%= t('index.menu_op2') %>
                     </a></li>
-                    <li class="navOption"><a class="page-scroll" href="#securis">
+                    <li class="indexNavOption"><a class="page-scroll" href="#securis" data-turbolinks="false">
                         SECURIS
                     </a></li>
-                    <li class="navOption"><a class="page-scroll" href="#team">
+                    <li class="indexNavOption"><a class="page-scroll" href="#team" data-turbolinks="false">
                         <%= t('index.menu_op3') %>
                     </a></li>
-                    <li class="navOption"><a class="page-scroll" href="#contact">
+                    <li class="indexNavOption"><a class="page-scroll" href="#contact" data-turbolinks="false">
                         <%= t('index.menu_op4') %>
                     </a></li>
                     <%= yield :language_option %>
@@ -95,18 +96,25 @@
     <header id="cover">
         <div class="container">
             <div class="row header-content">
-              <img src="/images/index/securis.svg" class="img-responsive center-block" width="150" height="150" alt="SECURIS: Fatima logo">
                 <div class="col-lg-6 col-lg-offset-3 text-center header-text">
-                  <h1 id="homeHeading">
-                      <span class="portugues">A tua peregrinação a Fátima começa <a href="#features">AQUI</a>!</span>
-                  </h1>
-                  <hr>
-                      <span class="portugues">
-                          <p>Prepara-te para as celebrações do Centenário das Aparições em Fátima. Toda a informação que precisas está nas tuas mãos.</p>
-                      </span>
+                <img src="/images/index/securis.svg" class="img-responsive center-block" width="150" height="150" alt="SECURIS: Fatima logo">
+                <h1 id="homeHeading">
+                    <span class="english">Your pilgrimage to Fátima starts <a href="/fatima">HERE</a>!</span>
+                    <span class="portugues">A tua peregrinação a Fátima começa <a href="/fatima">AQUI</a>!</span>
+                </h1>
+                <hr>
+                    <span class="english">
+                        <p>Prepare yourself for the celebrations of the Centennial of the apparitions of Fatima. All the information you need is in your hands.</p>
+                    </span>
+                    <span class="portugues">
+                        <p>Prepara-te para as celebrações do Centenário das Aparições em Fátima. Toda a informação que precisas está nas tuas mãos.</p>
+                    </span>
                 </div>
             </div>
                 <div class="cover-image-source bottom-align-text">
+                    <span class="english">
+                        <p><a href="https://commons.wikimedia.org/wiki/File:SantuariodeFatima.jpg">Image source</a></p>
+                    </span>
                     <span class="portugues">
                         <p><a href="https://commons.wikimedia.org/wiki/File:SantuariodeFatima.jpg">Fonte da Imagem</a></p>
                     </span>
@@ -118,11 +126,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center header-text">
-                    <h2>
+                    <h2 class="section-heading">
+                        <span class="english">Everything you need, in a single place!</span>
                         <span class="portugues">Tudo o que precisas, num só sítio!</span>
                     </h2>
                     <hr class="dark">
                     <p class="text-faded">
+                        <span class="english">Check out all you can do!</span>
                         <span class="portugues">Descobre o que temos para ti!</span>
                     </p>
                 </div>
@@ -145,9 +155,11 @@
                                     <div class="feature-item">
                                         <img src="/images/index/features/map.svg" class="img-responsive feature-icon" alt=""> 
                                         <h3>
+                                            <span class="english">Explore</span>
                                             <span class="portugues">Explorar</span>
                                         </h3>
                                         <p class="text-muted">
+                                            <span class="english">Interactive map of Fatima displaying main resources, principal attractions and relevant contacts.</span>
                                             <span class="portugues">Mapa interactivo de Fátima contendo os recursos principais, pontos de interesse e contactos relevantes.</span>
                                         </p>
                                     </div>
@@ -156,9 +168,11 @@
                                     <div class="feature-item">
                                         <img src="/images/index/features/santuario.svg" class="img-responsive feature-icon" alt=""> 
                                         <h3>
+                                            <span class="english">History</span>
                                             <span class="portugues">História</span>
                                         </h3>
                                         <p class="text-muted">
+                                            <span class="english">Delve into the history of the Apparitions of Fatima.</span>
                                             <span class="portugues">Conhece a história das Aparições de Fátima.</span>
                                         </p>
                                     </div>
@@ -169,10 +183,12 @@
                                     <div class="feature-item">
                                         <img src="/images/index/features/prayer_fs.svg" class="img-responsive feature-icon" alt=""> 
                                         <h3>
+                                            <span class="english">Centennial</span>
                                             <span class="portugues">Centenário</span>
                                         </h3>
                                         <p class="text-muted">
-                                            <span class="portugues">Programa, notícias e conteúdos variados relacionado com as celebrações do Centenário.</span>
+                                            <span class="english">Program and content related to the Centennial celebrations.</span>
+                                            <span class="portugues">Programa e conteúdos variados relacionado com as celebrações do Centenário.</span>
                                         </p>
                                     </div>
                                 </div>
@@ -180,9 +196,11 @@
                                     <div class="feature-item">
                                         <img src="/images/index/features/car.svg" class="img-responsive feature-icon" alt=""> 
                                         <h3>
+                                            <span class="english">Directions</span>
                                             <span class="portugues">Direções</span>
                                         </h3>
                                         <p class="text-muted">
+                                            <span class="english">How to get to Fatima, either on foot, by car or using public transportation.</span>
                                             <span class="portugues">Como chegar a Fátima, quer a pé, de carro ou utilizando os transportes públicos.</span>
                                         </p>
                                     </div>
@@ -193,9 +211,11 @@
                                     <div class="feature-item">
                                         <img src="/images/index/features/segurança.svg" class="img-responsive feature-icon" alt=""> 
                                         <h3>
+                                            <span class="english">Security</span>
                                             <span class="portugues">Segurança</span>
                                         </h3>
                                         <p class="text-muted">
+                                            <span class="english">Security advices, what to do in an emergency and who to contact.</span>
                                             <span class="portugues">Conselhos de segurança, o que fazer numa emergência e quem contactar.</span>
                                         </p>
                                     </div>
@@ -204,9 +224,11 @@
                                     <div class="feature-item">
                                         <img src="/images/index/features/language.svg" class="img-responsive feature-icon" alt=""> 
                                         <h3>
+                                            <span class="english">Multilingual</span>
                                             <span class="portugues">Multi-linguística</span>
                                         </h3>
                                         <p class="text-muted">
+                                            <span class="english">Available in Portuguese and English; other languages will be available soon.</span>
                                             <span class="portugues">Disponível em Português e Inglês; outras linguagens disponíveis brevemente.</span>
                                         </p>
                                     </div>
@@ -225,11 +247,13 @@
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <div class="header-text">
                         <h2 class="section-heading">
+                            <span class="english">Give it a try and prepare to be amazed!</span>
                             <span class="portugues">Experimenta e surpreende-te!</span>
                         </h2>
                         <hr class="light">
                         <p>
-                            <span class="portugues">Brevemente disponível para Android ou através do website.</span>
+                            <span class="english">Available for Android or via website.</span>
+                            <span class="portugues">Disponível para Android ou através do website.</span>
                         </p>
                     </div>
 
@@ -239,6 +263,7 @@
                             <div class="col-md-6">
                                 <div class="download-link">
                                     <a href="" class="btn btn-warning btn-lg">
+                                        <span class="english"><i class="fa fa-download" aria-hidden="true"></i> Download app</span>
                                         <span class="portugues"><i class="fa fa-download" aria-hidden="true"></i> Transferir aplicação</span>
                                     </a>
                                 </div>
@@ -246,6 +271,7 @@
                             <div class="col-md-6">
                                 <div class="download-link">
                                     <a href="/fatima" class="btn btn-warning btn-lg">
+                                        <span class="english"><i class="fa fa-globe" aria-hidden="true"></i> Go to website</span>
                                         <span class="portugues"><i class="fa fa-globe" aria-hidden="true"></i> Visitar página</span>
                                     </a>
                                 </div>
@@ -264,10 +290,12 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center text-content">
                     <h2 class="section-heading">
+                        <span class="english">Enjoy your travel!</span>
                         <span class="portugues">Disfruta da tua viagem!</span>
                     </h2>
                     <hr class="light">
                     <p class="text-faded">
+                        <span class="english">And leave all your worries with us. At SECURIS, we care about your safety, offering you tools and information to relax and enjoy your travel as secure as possible.</span>
                         <span class="portugues">E deixa as preocupações connosco. A SECURIS preocupa-se com a tua segurança, disponibilizando ferramentas e acesso a informação, para poderes relaxar e aproveitar a tua viagem.</span>
                     </p>
                 </div>
@@ -282,6 +310,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">
+                        <span class="english">Our amazing team</span>
                         <span class="portugues">A nossa equipa</span>
                     </h2>
                     <hr class="dark">
@@ -318,6 +347,7 @@
 
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2>
+                        <span class="english">Awards</span>
                         <span class="portugues">Prémios</span>
                     </h2>
 
@@ -355,20 +385,23 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">
+                        <span class="english">Contact us!</span>
                         <span class="portugues">Contacta-nos!</span>
                     </h2>
                     <hr class="primary">
                     <p>
+                        <span class="english">Feel free to email us to provide feedback, give us suggestions, or to just say hello!</span>
                         <span class="portugues">Entra em contacto connosco, quer seja para apresentares sugestões, dar a tua opinião, ou apenas dizer olá!</span>
                     </p>
 
                     <h3>
-                        <a href="projectsecuris@gmail.com">projectsecuris@gmail.com</a>
+                        <a href="mailto:mail@mail.com">mail@mail.com</a>
                     </h3>
                 </div>
 
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2>
+                        <span class="english">Follow us:</span>
                         <span class="portugues">Segue-nos:</span>
                     </h2>
 
@@ -385,5 +418,54 @@
 
         </div>
     </section>
+
+<script type="text/javascript">
+    $( document ).ready(function() {
+        checkScroll();
+
+        $(".dropdown-toggle").dropdown();
+    })
+
+
+    $(function() {
+        //home button (logo)
+        $("#navHome").click(function() {
+            console.log("INDEX");
+            // remove classes from all
+            //$("li").removeClass("active");
+        });
+
+        $(".indexNavOption").click(function() {
+            console.log("HERE");
+            console.log($(this));
+            // remove classes from all
+            $(".indexNavOption").removeClass("active");
+            // add class to the one we clicked
+            $(this).addClass("active");
+
+    //$(this).toggleClass('active');
+            console.log($(this));
+        });
+    });
+
+    /**
+     * Listen to scroll to change header opacity class
+     */
+    function checkScroll(){
+        var startY = $('#indexnav').height() * 2; //The point where the navbar changes in px
+
+        if($(window).scrollTop() > startY){
+            $('#indexnav').addClass("scrolled");
+        }else{
+            $('#indexnav').removeClass("scrolled");
+        }
+    }
+
+    if($('#indexnav').length > 0){
+        $(window).on("scroll load resize", function(){
+            checkScroll();
+        });
+    }
+</script>
 
 </body>
