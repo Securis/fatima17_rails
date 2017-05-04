@@ -292,3 +292,7 @@ body {
     white-space: normal !important;
     word-wrap: break-word;
 }
+
+#page_content-with-cover li {
+	font-size: 16px;
+}

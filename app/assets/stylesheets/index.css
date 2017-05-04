@@ -182,9 +182,8 @@
 }
 #index header .bottom-align-text {
     position: absolute;
-    bottom: 0;
-    right: 0;
-    padding-right: 20px;
+    bottom: -20px;
+    right: 20px;
 }
 #index header .bottom-align-text p{
   font-weight: 400;

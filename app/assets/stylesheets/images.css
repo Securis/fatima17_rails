@@ -23,13 +23,13 @@
 }
 
 #cover #directions_car {
-	background-image: url('/images/x/x.jpg');
+	background-image: url('/images/directions/car.jpeg');
 }
 
 #cover #directions_foot {
-	background-image: url('/images/x/x.jpg');
+	background-image: url('/images/directions/walk.jpeg');
 }
 
 #cover #directions_transports {
-	background-image: url('/images/x/x.jpg');
+	background-image: url('/images/directions/train.jpeg');
 }

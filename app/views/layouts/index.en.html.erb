@@ -237,14 +237,14 @@
                     <div class="col-lg-8 col-lg-offset-2 text-center">
 
                         <div class="row">
-                            <div class="col-xs-6">
+                            <div class="col-md-6">
                                 <div class="download-link">
-                                    <a href="https://play.google.com/store/apps/details?id=com.securis.ricksilva.securis_fatimapilgrimage" class="btn btn-warning btn-lg">
+                                    <a href="https://play.google.com/store/apps/details?id=com.securis.securisprojectfatima.securis_fatimapilgrimage" class="btn btn-warning btn-lg">
                                         <span class="english"><i class="fa fa-download" aria-hidden="true"></i> Download app</span>
                                     </a>
                                 </div>
                               </div>
-                            <div class="col-xs-6">
+                            <div class="col-md-6">
                                 <div class="download-link">
                                     <a href="/en/fatima" class="btn btn-warning btn-lg">
                                         <span class="english"><i class="fa fa-globe" aria-hidden="true"></i> Go to website</span>
@@ -411,23 +411,11 @@
 
 
     $(function() {
-        //home button (logo)
-        $("#navHome").click(function() {
-            console.log("INDEX");
-            // remove classes from all
-            //$("li").removeClass("active");
-        });
-
         $(".indexNavOption").click(function() {
-            console.log("HERE");
-            console.log($(this));
             // remove classes from all
             $(".indexNavOption").removeClass("active");
             // add class to the one we clicked
             $(this).addClass("active");
-
-    //$(this).toggleClass('active');
-            console.log($(this));
         });
     });
 
