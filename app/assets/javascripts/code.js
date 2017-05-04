@@ -1,7 +1,6 @@
-
-    $(function() {
-      window.scrollReveal = new scrollReveal();
-    });
+$(function() {
+    window.scrollReveal = new scrollReveal();
+});
 
 
 //LATERAL IMAGES

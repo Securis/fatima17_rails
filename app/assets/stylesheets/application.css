@@ -29,6 +29,18 @@ body {
   letter-spacing: 1px;
 }
 
+.bottom-space {
+	padding-bottom: 25px;
+}
+#page_content-with-cover {
+	min-height: 100px;
+}
+@media (min-width: 768px) {
+	#page_content-with-cover {
+		min-height: 300px;
+	}
+}
+
 /*MOBILE VS DESKTOP*/
 .mobile-only, .mobile-medium {display:block;}
 .desktop-only, .desktop-medium {display:none;}
