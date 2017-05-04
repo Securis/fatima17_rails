@@ -220,6 +220,13 @@
         $(".dropdown-toggle").dropdown();
     })
 
+    //LATERAL IMAGES
+    $(function() {
+        $(window).resize(function() {
+            $('#width-placeholder').html($("#sidebar").width());
+        }).resize();
+    });
+
 </script>
 
 </body>

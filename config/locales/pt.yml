@@ -46,8 +46,8 @@ pt:
         submenu_op4_1: "A Pé"
         submenu_op4_2: "Carro"
         submenu_op4_3: "Transportes Públicos"
-        submenu_op5_1: "Recomendações"
-        submenu_op5_2: "Emergências"
+        submenu_op5_1: "Conselhos"
+        submenu_op5_2: "Emergência"
         submenu_op5_3: "Consulados / Embaixadas"
     footer:
         about: "Sobre"
