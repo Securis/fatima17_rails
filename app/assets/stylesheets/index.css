@@ -14,12 +14,7 @@
  *= require_self
  *= require font-awesome
  */
-
-.english {
-	display:none;
-}
-
-
+ 
 #index hr {
   border-color: white;
   border-width: 2px;

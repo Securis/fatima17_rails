@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:site_name" content="Securis"/>
+    <meta property="og:title" content="Securis: Fatima"/>
+    <meta property="og:description" content="All the information you need for the celebrations of the Centennial of the apparitions of Fatima."/>
+    <meta property="og:image" content="/images/index/securis.png">
+    <meta property="og:url" content="https://securis.github.io/">
+    <meta property="og:type" content="site"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <title>SECURIS</title>
+
+    <%= stylesheet_link_tag 'index', media: 'all', 'data-turbolinks-track' => true %>
+
+    <%= javascript_include_tag 'index', 'data-turbolinks-track' => true %>
+    
+    <%= csrf_meta_tags %>
+
+</head>
+<body id="index" data-spy="scroll" data-target=".navbar" data-offset="0">
+
+    <% available_languages = [
+        {language: "English", dim: :en},
+        {language: "Português", dim: :pt},
+        ] %>
+
+    <% content_for :language_option do %>
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= t('menu.menu_op7') %><span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <% available_languages.each do |option| %>
+                    <% if I18n.locale == option[:dim] %>
+                        <li>
+                            <%= link_to url_for(locale: option[:dim]) do %>
+                                <%= option[:language] %> <i class="fa fa-check" aria-hidden="true"></i>
+                            <% end %>
+                        </li>
+                    <% else %>
+                        <li><%= link_to option[:language], url_for(locale: option[:dim]) %></li>
+                    <% end %>   
+                <% end %>
+            </ul>
+        </li>
+    <% end %>
+
+    <!--NAVIGATION-->
+    <nav id="indexnav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="pull-left" id="navHome" href="#cover">
+                    <img src="/images/index/Securis-Fátima17_logo_lat.png" class="img-responsive" width="170" height="170" alt="SECURIS: Fatima logo">
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="indexNavOption"><a class="page-scroll" href="#features" data-turbolinks="false">
+                        <%= t('index.menu_op1') %>
+                    </a></li>                    
+                    <li class="indexNavOption"><a class="page-scroll" href="#download" data-turbolinks="false">
+                        <%= t('index.menu_op2') %>
+                    </a></li>
+                    <li class="indexNavOption"><a class="page-scroll" href="#securis" data-turbolinks="false">
+                        SECURIS
+                    </a></li>
+                    <li class="indexNavOption"><a class="page-scroll" href="#team" data-turbolinks="false">
+                        <%= t('index.menu_op3') %>
+                    </a></li>
+                    <li class="indexNavOption"><a class="page-scroll" href="#contact" data-turbolinks="false">
+                        <%= t('index.menu_op4') %>
+                    </a></li>
+                    <%= yield :language_option %>
+                </ul>
+
+            </div>
+            <!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <!--COVER-->
+    <header id="cover">
+        <div class="container">
+            <div class="row header-content">
+                <div class="col-lg-6 col-lg-offset-3 text-center header-text">
+                <img src="/images/index/securis.svg" class="img-responsive center-block" width="150" height="150" alt="SECURIS: Fatima logo">
+                <h1 id="homeHeading">
+                    Your pilgrimage to Fátima starts <a href="/fatima">HERE</a>!
+                </h1>
+                <hr>
+                    <span class="english">
+                        <p>Prepare yourself for the celebrations of the Centennial of the apparitions of Fatima. All the information you need is in your hands.</p>
+                    </span>
+                </div>
+            </div>
+                <div class="cover-image-source bottom-align-text">
+                    <span class="english">
+                        <p><a href="https://commons.wikimedia.org/wiki/File:SantuariodeFatima.jpg">Source</a></p>
+                    </span>
+                </div>
+        </div>
+    </header>
+
+    <section id="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center header-text">
+                    <h2 class="section-heading">
+                        <span class="english">Everything you need, in a single place!</span>
+                    </h2>
+                    <hr class="dark">
+                    <p class="text-faded">
+                        <span class="english">Check out all you can do!</span>
+                    </p>
+                </div>
+            </div>
+
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+                        <div class="device-container">
+                            <div class="device">
+                                <div class="screen">
+                                    <img src="/images/index/features/app.jpg" class="img-responsive" alt=""> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-12">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="feature-item">
+                                        <img src="/images/index/features/map.svg" class="img-responsive feature-icon" alt=""> 
+                                        <h3>
+                                            <span class="english">Explore</span>
+                                        </h3>
+                                        <p class="text-muted">
+                                            <span class="english">Interactive map of Fatima displaying main resources, principal attractions and relevant contacts.</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="feature-item">
+                                        <img src="/images/index/features/santuario.svg" class="img-responsive feature-icon" alt=""> 
+                                        <h3>
+                                            <span class="english">History</span>
+                                        </h3>
+                                        <p class="text-muted">
+                                            <span class="english">Delve into the history of the Apparitions of Fatima.</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="feature-item">
+                                        <img src="/images/index/features/prayer_fs.svg" class="img-responsive feature-icon" alt=""> 
+                                        <h3>
+                                            <span class="english">Centennial</span>
+                                        </h3>
+                                        <p class="text-muted">
+                                            <span class="english">Program and content related to the Centennial celebrations.</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="feature-item">
+                                        <img src="/images/index/features/car.svg" class="img-responsive feature-icon" alt=""> 
+                                        <h3>
+                                            <span class="english">Directions</span>
+                                        </h3>
+                                        <p class="text-muted">
+                                            <span class="english">How to get to Fatima, either on foot, by car or using public transportation.</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="feature-item">
+                                        <img src="/images/index/features/segurança.svg" class="img-responsive feature-icon" alt=""> 
+                                        <h3>
+                                            <span class="english">Security</span>
+                                        </h3>
+                                        <p class="text-muted">
+                                            <span class="english">Security advices, what to do in an emergency and who to contact.</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="feature-item">
+                                        <img src="/images/index/features/language.svg" class="img-responsive feature-icon" alt=""> 
+                                        <h3>
+                                            <span class="english">Multilingual</span>
+                                        </h3>
+                                        <p class="text-muted">
+                                            <span class="english">Available in Portuguese and English.</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+        </div>
+    </section>
+
+    <section class="blueBG" id="download">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <div class="header-text">
+                        <h2 class="section-heading">
+                            <span class="english">Give it a try and prepare to be amazed!</span>
+                        </h2>
+                        <hr class="light">
+                        <p>
+                            <span class="english">Available for Android or via website.</span>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-8 col-lg-offset-2 text-center">
+
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <div class="download-link">
+                                    <a href="https://play.google.com/store/apps/details?id=com.securis.ricksilva.securis_fatimapilgrimage" class="btn btn-warning btn-lg">
+                                        <span class="english"><i class="fa fa-download" aria-hidden="true"></i> Download app</span>
+                                    </a>
+                                </div>
+                              </div>
+                            <div class="col-xs-6">
+                                <div class="download-link">
+                                    <a href="/fatima/en" class="btn btn-warning btn-lg">
+                                        <span class="english"><i class="fa fa-globe" aria-hidden="true"></i> Go to website</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="securis">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center text-content">
+                    <h2 class="section-heading">
+                        <span class="english">Enjoy your travel!</span>
+                    </h2>
+                    <hr class="light">
+                    <p class="text-faded">
+                        <span class="english">And leave all your worries with us. At SECURIS, we care about your safety, offering you tools and information to relax and enjoy your travel as secure as possible.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="team">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">
+                        <span class="english">Our amazing team</span>
+                    </h2>
+                    <hr class="dark">
+                </div>
+
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <div class="row">
+
+                    <div class="col-sm-4">
+                        <div class="team-member">
+                                <img src="/images/index/team/pedro.jpg" class="img-responsive img-circle" alt="">
+                            <h4>Pedro Costa</h4>
+                            <p class="text-muted">Business Developer</p>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="team-member">
+                                <img src="/images/index/team/ines.jpg" class="img-responsive img-circle" alt="">
+                            <h4>Inês Coelho</h4>
+                            <p class="text-muted">Software Engineer</p>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="team-member">
+                                <img src="/images/index/team/ricardo.jpg" class="img-responsive img-circle" alt="">
+                            <h4>Ricardo Silva</h4>
+                            <p class="text-muted">Software Developer</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2>
+                        <span class="english">Awards</span>
+                    </h2>
+
+                    <div class="row" id="list-awards">
+                        <div class="col-sm-3">
+                            <div class="award">
+                                <img src="/images/index/awards/startupvoucher.jpg" alt="..." class="img-responsive img-rounded">
+                            </div>
+                          </div>
+                        <div class="col-sm-3">
+                            <div class="award">
+                                <img src="/images/index/awards/turismo.jpg" alt="..." class="img-responsive img-rounded">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="award">
+                                <img src="/images/index/awards/spin.png" alt="..." class="img-responsive img-rounded">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="award">
+                                <img src="/images/index/awards/poliempreende.png" alt="..." class="img-responsive img-rounded">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="darkBlueBG" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">
+                        <span class="english">Contact us!</span>
+                    </h2>
+                    <hr class="primary">
+                    <p>
+                        <span class="english">
+                            Fátima is just the first tiny piece of project SECURIS. Sign up to our newsletter to keep up with our news!
+                        </span>
+                    </p>
+
+                    <!-- Begin MailChimp Signup Form -->
+                    <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+
+                    <form action="//github.us15.list-manage.com/subscribe/post?u=f70103c5f0796c2c0153ba0ef&amp;id=b6650650b2" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline" target="_blank" novalidate>
+                      <div class="form-group" id="mc_embed_signup_scroll">
+                        <input type="email" value="" name="EMAIL" class="form-control email input-lg" id="mce-EMAIL" placeholder="<%= t('footer.enter_email') %>" required>
+                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_f70103c5f0796c2c0153ba0ef_b6650650b2" tabindex="-1" value=""></div>
+                      </div>
+                      <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="btn btn-lg btn-warning"><%= t('footer.subscribe') %></button>
+                    </form>
+                
+                    <!--End mc_embed_signup-->
+                </div>
+
+                <div class="col-lg-8 col-lg-offset-2 text-center" id="social-media-container" >
+                    <h2>
+                        <span class="english">Find us:</span>
+                    </h2>
+
+                    <ul class="list-inline list-social">
+                        <li class="social-media" id="mail">
+                            <a href="mailto:projetosecuris@gmail.com"><i class="fa fa-envelope-o"></i></a>
+                        </li>
+                        <li class="social-media" id="twitter">
+                            <a href="https://twitter.com/SecurisFatima17"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li class="social-media" id="facebook">
+                            <a href="https://www.facebook.com/securis.fatima/"><i class="fa fa-facebook"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+<script type="text/javascript">
+    $( document ).ready(function() {
+        checkScroll();
+
+        $(".dropdown-toggle").dropdown();
+    })
+
+
+    $(function() {
+        //home button (logo)
+        $("#navHome").click(function() {
+            console.log("INDEX");
+            // remove classes from all
+            //$("li").removeClass("active");
+        });
+
+        $(".indexNavOption").click(function() {
+            console.log("HERE");
+            console.log($(this));
+            // remove classes from all
+            $(".indexNavOption").removeClass("active");
+            // add class to the one we clicked
+            $(this).addClass("active");
+
+    //$(this).toggleClass('active');
+            console.log($(this));
+        });
+    });
+
+    /**
+     * Listen to scroll to change header opacity class
+     */
+    function checkScroll(){
+        var startY = $('#indexnav').height() * 2; //The point where the navbar changes in px
+
+        if($(window).scrollTop() > startY){
+            $('#indexnav').addClass("scrolled");
+        }else{
+            $('#indexnav').removeClass("scrolled");
+        }
+    }
+
+    if($('#indexnav').length > 0){
+        $(window).on("scroll load resize", function(){
+            checkScroll();
+        });
+    }
+</script>
+
+</body>
