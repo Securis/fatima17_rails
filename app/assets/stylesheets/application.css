@@ -37,7 +37,7 @@ body {
 }
 @media (min-width: 768px) {
 	#page_content-with-cover {
-		min-height: 300px;
+		min-height: 400px;
 	}
 }
 
