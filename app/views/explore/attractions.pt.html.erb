@@ -1,3 +1,159 @@
+<% attractions = [
+    {
+        name: "Santuário de Fátima", 
+        description: "Centro Ecuménico situado no local das Aparições de Nossa Senhora aos Três Pastorinhos, em 1917.", 
+        collapse: "attraction-santuary", 
+        text: ["Construído a pedido expresso de Nossa Senhora, na Aparição de Outubro de 1917 aos Três Pastorinhos, tem como missão preservar a memória dos acontecimentos que levaram à sua fundação. É atualmente um dos mais importantes santuários marianos do mundo pertencentes à Igreja Católica e, por vontade expressa da Sé Apostólica, este é um Santuário Nacional.", "O Santuário de Fátima foi distinguido com duas Rosas de Ouro papais, em reconhecimento e recompensa por assinalados serviços prestados à Igreja ou a bem da sociedade. A primeira Rosa de Ouro foi concedida pelo Papa Paulo VI, a 21 de Novembro de 1964, e a segunda foi entregue pelo Papa Bento XVI, durante a sua peregrinação a Fátima, a 12 de Maio de 2010."], 
+        link: "http://www.google.com/maps/place/39.631256,-8.673136", 
+        img: "/images/attractions/santuarioFatima.JPG"
+    },
+    {
+        name: "Livraria do Santuário", 
+        description: "Livraria do Santuário integrada no interior do Santuário de Nossa Senhora de Fátima.", 
+        collapse: "attraction-livraria", 
+        text: ["Oferece a quem a visita uma vasta quantidade de publicações de livros e revistas de carácter religioso."], 
+        link: "http://www.google.com/maps/place/39.632800, -8.673537", 
+        img: "/images/attractions/livraria.JPG"
+    },
+        {
+        name: "Recinto de Oração", 
+        description: "Amplo espaço descoberto, ocupa uma posição central no complexo do Santuário de Fátima.", 
+        collapse: "attraction-recinto", 
+        text: ["O Recinto de Oração do Santuário de Fátima é um vasto espaço aberto, convidativo à interioridade e à oração. É neste espaço que se concentram os peregrinos para assistir às celebrações de Fátima. A Capelinha das Aparições constitui o coração do Recinto.","É possível encontrar neste espaço diversos monumentos e esculturas: o Monumento ao Sagrado Coração de Jesus é uma estátua de bronze dourada sustentada sobre um fontanário; um Presépio triangular, alusivo à Santíssima Trindade; o monumento-memorial, dedicado ao cónego Dr. Manuel Nunes Formigão e padre Prof. Dr. Luís Fischer, dois ilustres sacerdotes que estiveram nos fundamentos da historiografia das Aparições de Fátima e da difusão da sua mensagem, é constituído por sete painéis de granito verde-pérola."], 
+        link: "http://www.google.com/maps/place/39.630956, -8.673598", 
+        img: "/images/attractions/recintoOracoes.JPG"
+    },
+    {
+        name: "Basílica de Nossa Senhora do Rosário de Fátima", 
+        description: "Templo religioso construído no local onde terão ocorrido as aparições da Virgem Maria.", 
+        collapse: "attraction-basilica", 
+        text: ["Basílica integrante do Santuário de Fátima, onde repousam os restos mortais dos Três Pastorinhos. Integra o Santuário de Fátima e ergue-se no local onde, a 13 de Maio de 1917, os Três Pastorinhos brincavam, quando avistaram o relâmpago que antecedeu a primeira Aparição de Nossa Senhora. Sobre a entrada principal da Basílica, encontra-se um mosaico representativo da Sacratíssima Trindade a coroar Nossa Senhora. Os túmulos dos três pastorinhos encontram-se no extremo direito (Francisco) e esquerdo (Jacinta e Lúcia) do transepto."], 
+        link: "http://www.google.com/maps/place/39.632215, -8.671977", 
+        img: "/images/attractions/basilicaSraFatima.JPG"
+    },
+    {
+        name: "Capelinha das Aparições", 
+        description: "Construído em resposta ao pedido de Maria, é o local de culto mais popular.", 
+        collapse: "attraction-capelinha", 
+        text: ["Foi no local onde se encontra a Capelinha que Nossa Senhora falou aos pastorinhos. Das seis aparições da Virgem Maria, cinco aconteceram neste local – Maio, Junho, Julho, Setembro e Outubro – onde, por indicação da Senhora, haveria de ser construída uma capela em sua honra. Embora sujeita a ligeiras alterações, a Capelinha das Aparições mantém os traços originais e característicos de uma ermida popular. O alpendre atual foi inaugurado aquando da primeira vinda de João Paulo II ao Santuário de Fátima, nos dias 12 e 13 de maio de 1982. A peanha onde se encontra a Imagem de Nossa Senhora marca o sítio onde estava a pequena azinheira sobre a qual a Senhora do Rosário apareceu."], 
+        link: "http://www.google.com/maps/place/39.631620, -8.673372", 
+        img: "/images/attractions/capelinhaAparicoes.JPG"
+    },
+    {
+        name: "Basílica da Santíssima Trindade
+", 
+        description: "Uma das maiores basílicas do mundo, com um toque internacional.", 
+        collapse: "attraction-trindade", 
+        text: ["A basílica é um edifício moderno de formato circular e cor branca, a cor da pedra que a reveste, proveniente desta região, que é conhecida como branco do mar. O imponente edifício tem capacidade para 8.633 lugares sentados, podendo o interior ser divisível em dois sectores através de uma parede móvel. A primeira pedra do edifício foi oferta do Papa João Paulo II e trata-se de um fragmento do túmulo do apóstolo S. Pedro. Devido à sua importância, esta foi colocada junto ao altar, debaixo de um crucifixo com sete metros e meio de altura."], 
+        link: "http://www.google.com/maps/place/39.629672, -8.675287", 
+        img: "/images/attractions/basilicaSantissimaTrindade.JPG"
+    },
+    {
+        name: "Centro Pastoral de Paulo VI", 
+        description: "A sua função é apoiar os peregrinos que todos os anos visitam o santuário.", 
+        collapse: "attraction-pastoral", 
+        text: ["O Centro Pastoral de Paulo VI – assim denominado em homenagem ao primeiro papa que se fez peregrino de Fátima, em Maio de 1967 – situa-se no traçado poente do Santuário de Fátima, para lá da avenida D. José Alves Correia da Silva."], 
+        link: "http://www.google.com/maps/place/39.628054, -8.677659", 
+        img: "/images/attractions/centroPastoral.JPG"
+    },
+    {
+        name: "Valinhos", 
+        description: "Entre a 8.ª e a 9.ª estação da Via-sacra no Caminho dos Pastorinhos fica o local onde ocorreu a quarta aparição de Nossa Senhora, em 19 de agosto de 1917.", 
+        collapse: "attraction-valinhos", 
+        text: ["O monumento que assinala o evento foi construído com ofertas dos católicos húngaros. A imagem foi esculpida por Maria Amélia Carvalheira da Silva e o nicho em que se encontra foi arquitetado por António Lino."], 
+        link: "http://www.google.com/maps/place/39.618501, -8.668054", 
+        img: "/images/attractions/valinhos.JPG"
+    },
+    {
+        name: "Via Sacra e Calvário (Caminho dos Pastorinhos)", 
+        description: "O Caminho da Via-Sacra inicia-se na Rotunda de Santa Teresa (Rotunda Sul), em Fátima, terminando junto à Capela do Calvário Húngaro. (Fazer a Rua Via Sacra até Valinhos e continuar pela rua de calçada até ao Calvário - Valinhos)", 
+        collapse: "attraction-via-sacra", 
+        text: ["É um Caminho representativo do percurso percorrido por Jesus Cristo carregando a Cruz, desde o Pretório de Pilatos até ao Monte do Calvário, episódio da Crucificação. O trilho constituído por quinze estações ilustrativas, (catorze da Crucificação, mais uma da Ressurreição de Jesus Cristo), oferecidas pelo povo Húngaro, é feito pelos cristãos meditando, em oração, na Paixão de Cristo. As estações estão localizadas em parte do caminho usado pelos Pastorinhos, entre Aljustrel e a Cova da Iria, na altura das aparições.""Representações das estações da Via-Sacra:","I – Jesus é condenado à morte;","II- Jesus carrega com a cruz;","III – Jesus cai pela primeira vez;","IV – Jesus encontra sua Mãe;","V – Simão de Cirene ajuda Jesus a carregar a cruz;","VI – A Verónica limpa o rosto de Jesus;","VII – Jesus cai pela segunda vez;","VIII- As mulheres de Jerusalém choram por Jesus;","IX – Jesus cai pela terceira vez;","X – Jesus é despojado de suas vestes;","XI – Jesus é pregado na cruz;","XII – Jesus morre na cruz;","XIII – O corpo de Jesus é retirado da cruz;","XIV – O corpo de Jesus é colocado no sepulcro."], 
+        link: "http://www.google.com/maps/place/39.625242, -8.666851", 
+        img: "/images/attractions/viaSacra.JPG"
+    },
+    {
+        name: "Loca do Anjo", 
+        description: "Local onde os Pastorinhos de Fátima tiveram a primeira e terceira aparições do Anjo.", 
+        collapse: "attraction-loca-anjo", 
+        text: ["As imagens que aí figuram, o Anjo e as três crianças, são da autoria de Maria Amélia Carvalheira da Silva."], 
+        link: "http://www.google.com/maps/place/39.616363, -8.670304", 
+        img: "/images/attractions/loucaCabeco.JPG"
+    },
+    {
+        name: "Casa de Francisco e Jacinta Marto", 
+        description: "Foi nesta casa que os irmãos Francisco e Jacinta Marto nasceram e viveram", 
+        collapse: "attraction-casa-fj", 
+        text: ["Situada a cerca de 2 quilómetros do Santuário de Fátima, no povoado de Aljustrel, esta foi a casa em que nasceram os Beatos Francisco e Jacinta Marto, os dois filhos mais novos da família Marto. No ano de 2000 os dois irmãos foram beatificados pelo Papa João Paulo II, que visitou Fátima e presidiu à celebração. Jacinta tornou-se a cristã não mártir mais jovem a atingir o estatuto de beata"], 
+        link: "http://www.google.com/maps/place/39.616285, -8.663537", 
+        img: "/images/attractions/casaJacintaFrancisco.JPG"
+    },
+    {
+        name: "Casa de Lúcia dos Santos", 
+        description: "Foi nesta habitação que a mais velha dos três pastorinhos passou a infância.", 
+        collapse: "attraction-casa-lucia", 
+        text: ["No seu quintal existem ainda as figueiras à sombra das quais os três pequenos pastores brincavam e se escondiam quando procurados por curiosos ou peregrinos. Em 1981, a Irmã Lúcia ofereceu a casa ao Santuário, que dela tomou posse apenas em 1986. O espaço envolvente da casa foi arranjado e no seu quintal construiu-se um novo Posto de Acolhimento e Informações, inaugurado em Agosto de 1994."], 
+        link: "http://www.google.com/maps/place/39.615615, -8.664918", 
+        img: "/images/attractions/casaLucia.JPG"
+    },
+    {
+        name: "Poço do Arneiro", 
+        description: "Local onde apareceu o Anjo da Paz pela 2ª vez no verão de 1916.", 
+        collapse: "attraction-poco", 
+        text: ["Ao fundo do quintal da casa da Lúcia encontra-se o poço que se notabilizou pela segunda aparição angélica, no verão de 1916. Foi também aí que a Jacinta teve uma visão do santo padre a chorar e a rezar de joelhos numa grande casa."], 
+        link: "http://www.google.com/maps/place/39.614807, -8.664363", 
+        img: "/images/attractions/pocoArneiro.JPG"
+    },
+    {
+        name: "Casa-Museu de Aljustrel", 
+        description: "Centrado na etnografia, leva-nos numa viagem até Fátima no ano de 1917.", 
+        collapse: "attraction-museu-aljustrel", 
+        text: ["A Casa-Museu de Aljustrel localiza-se junto à casa natal da Lúcia, naquele povoado de Aljustrel, a cerca de 2 km do Santuário de Fátima. A Casa-Museu de Aljustrel surgiu em 1992, devido à preocupação com a preservação de espaços relacionados com os Três Pastorinhos. Esta instituição consegue mostrar-nos um pouco da vida rural em que estavam inseridos Jacinta, Francisco e Lúcia, dando a conhecer os usos e costumes das gentes de Fátima na altura em que ocorreram as aparições."], 
+        link: "http://www.google.com/maps/place/39.617030, -8.664402", 
+        img: "/images/attractions/casaMuseuAljustrel.JPG"
+    },
+    {
+        name: "Museu de Arte Sacra e Etnologia", 
+        description: "Aberto desde 1991, é dedicado à Natividade, Paixão e Ressurreição de Jesus.", 
+        collapse: "attraction-arte-sacra", 
+        text: ["O Museu de Arte Sacra e Etnologia de Fátima propõe aos visitantes um percurso através da história da Salvação, por meio de uma vasta coleção de imagens do Menino Jesus e presépios, e outra de crucifixos e figuras relativas à Paixão e morte de Cristo. A Exposição Etnográfica representa o universo cultural em que o Evangelho levado pelos missionários deve encarnar-se. Encontram-se peças originais, provenientes de África, América e Extremo Oriente. O visitante poderá ainda conhecer a Sala dos Pastorinhos e apreciar as relíquias dos Beatos Francisco e Jacinta Marto e de sua família."], 
+        link: "http://www.google.com/maps/place/39.629114, -8.669211", 
+        img: "/images/attractions/museuArteSacra.JPG"
+    },
+    {
+        name: "Museu de Cera de Fátima", 
+        description: "Muito próximo do Santuário, o peregrino pode visitar o Museu de Cera de Fátima, um dos primeiros no género em Portugal.", 
+        collapse: "attraction-cera", 
+        text: ["De acordo com o mote do museu, «apreciar as 31 cenas deste museu é compreender o porquê do peregrinar de 6 milhões de pessoas a Fátima por ano.» Em cenas compostas por figuras de cera, este Museu retrata a história dos videntes de Fátima e o seu contexto histórico."], 
+        link: "http://www.google.com/maps/place/39.632082, -8.677499", 
+        img: "/images/attractions/museuCera.JPG"
+    },
+    {
+        name: "Museu Interativo O Milagre de Fátima", 
+        description: "Com recurso às novas tecnologias (hologramas e 4D), foi recriado o início do século XX.", 
+        collapse: "attraction-interativo", 
+        text: ["Numa experiência única, as aparições do Anjo de Portugal e de Nossa Senhora aos três Pastorinhos, com um enquadramento histórico, são recriadas com recurso às novas tecnologias. É também recordado as visitas do Papa João Paulo II a Fátima, a procissão das velas e o Segredo."], 
+        link: "http://www.google.com/maps/place/39.630243, -8.678257", 
+        img: "/images/attractions/museuInteractivo.JPG"
+    },
+    {
+        name: "Museu do Santuário de Fátima", 
+        description: "Construído para mostrar as ofertas feitas ao Santuário, guarda a coroa da Virgem.", 
+        collapse: "attraction-museu-santuario", 
+        text: ["O Museu é constituído, maioritariamente, por ofertas entregues ao Santuário, entre as quais se destaca a coroa que é colocada na imagem da Virgem Maria nos dias de grandes peregrinações. Este exemplar único foi executado em Lisboa e nele trabalharam doze artistas durante 3 meses. Com um peso de 1200 gramas, é enriquecida com 313 pérolas e quase 2700 pedras preciosas."], 
+        link: "http://www.google.com/maps/place/39.630901, -8.672128", 
+        img: "/images/attractions/museuSantuario.JPG"
+    },
+    {
+        name: "Muro de Berlim em Fátima", 
+        description: "Existe em Fátima um pedaço de história moderna da Alemanha.", 
+        collapse: "attraction-muro-berlim", 
+        text: ["Trata-se de um monumento, com vitrina curvada, que exibe um pedaço de betão aparentemente normal. Mas não é. Trata-se de uma placa do muro de Berlim, trazida para o santuário a 5 de Maio de 1991, por iniciativa de um grupo de cidadãos encabeçados por Virgílio Casimiro, um emigrante português em Frankfurt."], 
+        link: "http://www.google.com/maps/place/39.630245, -8.672840", 
+        img: "/images/attractions/muroBerlim.JPG"
+    }
+    ] %>
+
 <section id="page_content">
     <div class="container-fluid">
 
@@ -8,72 +164,36 @@
                 <hr/>
             </div>
 
-            <div class = "row attraction">
-            	<div class="col-xs-12 col-sm-8" >
-            		<h3>Santuário de Fátima</h3>
-            		<p>Centro Ecuménico situado no local das Aparições de Nossa Senhora aos Três Pastorinhos, em 1917.</p>
+            <% attractions.each do |attraction| %>
+                <div class = "row attraction">
+                    <div class="col-xs-12 col-sm-8" >
+                        <h3><%= attraction[:name] %></h3>
+                        <p><%= attraction[:description] %></p>
 
-                    <a class="" role="button" data-toggle="collapse" href="#attraction-santuary" aria-expanded="false" aria-controls="attraction-santuary">
-                        <p> Mais informação <span class="caret"></span></p>
-                    </a>
-                    <div class="collapse" id="attraction-santuary">
-                        <div>
-                            <p>Meu Deus, eu creio, adoro, espero e amo-Vos. Peço-Vos perdão para os que não creem, não adoram, não esperam e não Vos amam.<br>
-                        </div>
-                    </div>
-
-                    <div class="bottom-space">
-                        <a href="https://play.google.com/store/apps/details?id=com.securis.securisprojectfatima.securis_fatimapilgrimage" class="btn btn-default">
-                            <i class="fa fa-map-o" aria-hidden="true"></i> Direções
+                        <a class="" role="button" data-toggle="collapse" href="#<%= attraction[:collapse] %>" aria-expanded="false" aria-controls="<%= attraction[:collapse] %>">
+                            <p> Mais informação <span class="caret"></span></p>
                         </a>
+                        <div class="collapse" id="<%= attraction[:collapse] %>">
+                            <div class="small-text">
+                                <% attraction[:text].each do |text| %>
+                                    <p><%= text %></p>
+                                <% end %>
+                            </div>
+                        </div>
+
+                        <div class="bottom-space">
+                            <a href="<%= attraction[:link] %>" class="btn btn-default">
+                                <i class="fa fa-map-o" aria-hidden="true"></i> Direções
+                            </a>
+                        </div>
+
                     </div>
 
-            	</div>
-
-				<div class="col-xs-12 col-sm-4" >
-					<img src="/images/attractions/basilicaSantissimaTrindade.JPG"  class="img-responsive" alt="">
-            	</div>
-            </div>
-
-            <div class = "row attraction">
-            	<div class="col-xs-12 col-sm-9" >
-            		<h3>Livraria do Santuário</h3>
-            		<p>Livraria do Santuário integrada no interior do Santuário de Nossa Senhora de Fátima.</p>
-            	</div>
-				<div class="col-xs-12 col-sm-3" >
-					<img src="/images/default.jpg" width="60%" class="img-responsive" alt="">
-            	</div>
-            </div>
-
-            <div class = "row attraction">
-            	<div class="col-xs-12 col-sm-9" >
-            		<h3>Recinto de Oração</h3>
-            		<p>Amplo espaço descoberto, ocupa uma posição central no complexo do Santuário de Fátima.</p>
-            	</div>
-				<div class="col-xs-12 col-sm-3" >
-					<img src="/images/default.jpg" width="60%" class="img-responsive" alt="">
-            	</div>
-            </div>
-
-            <div class = "row attraction">
-            	<div class="col-xs-12 col-sm-9" >
-            		<h3>Basílica de Nossa Senhora do Rosário de Fátima</h3>
-            		<p>Templo religioso construído no local onde terão ocorrido as aparições da Virgem Maria.</p>
-            	</div>
-				<div class="col-xs-12 col-sm-3" >
-					<img src="/images/default.jpg" width="60%" class="img-responsive" alt="">
-            	</div> 
-            </div>
-
-            <div class = "row attraction">
-            	<div class="col-xs-12 col-sm-9" >
-            		<h3>Capelinha das Aparições</h3>
-            		<p>Construído em resposta ao pedido de Maria, é o local de culto mais popular.</p>
-            	</div>
-				<div class="col-xs-12 col-sm-3" >
-					<img src="/images/default.jpg" width="60%" class="img-responsive" alt="">
-            	</div>
-            </div>
+                    <div class="col-xs-12 col-sm-4" >
+                        <img src="<%= attraction[:img] %>"  class="img-responsive" alt="">
+                    </div>
+                </div>
+            <% end %>
                      
         </div>
 

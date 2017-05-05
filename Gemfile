@@ -39,7 +39,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 gem 'rails-i18n', '~> 4.0.0' # for Rails 4
-gem 'font-awesome-rails', '~> 4.1.0.0'
+gem 'font-awesome-rails', '~> 4.7.0.1'
 gem "scrollreveal-rails" 
 
 group :development, :test do

@@ -20,7 +20,9 @@ p {
   line-height: 1.5;
   margin-bottom: 20px;
 }
-
+.small-text p {
+  font-size: 14px;
+}
 html,
 body {
   height: 100%;

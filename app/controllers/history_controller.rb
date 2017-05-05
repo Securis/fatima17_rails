@@ -1,4 +1,5 @@
 class HistoryController < ApplicationController
+  layout "application"  
   before_filter :set_var
 
   private
