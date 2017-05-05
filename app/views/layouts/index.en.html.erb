@@ -23,7 +23,7 @@
     <%= csrf_meta_tags %>
 
 </head>
-<body id="index" data-spy="scroll" data-target=".navbar" data-offset="0">
+<body id="index" data-spy="scroll" data-target="#indexnav" data-offset="50">
 
     <% available_languages = [
         {language: "English", dim: :en},
@@ -408,16 +408,6 @@
 
         $(".dropdown-toggle").dropdown();
     })
-
-
-    $(function() {
-        $(".indexNavOption").click(function() {
-            // remove classes from all
-            $(".indexNavOption").removeClass("active");
-            // add class to the one we clicked
-            $(this).addClass("active");
-        });
-    });
 
     /**
      * Listen to scroll to change header opacity class
