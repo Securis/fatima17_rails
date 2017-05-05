@@ -91,13 +91,22 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a id="navHome" href="/fatima/explore/explore">
+                <% if I18n.locale == :en %>
+                    <a id="navHome" href="/en/fatima/explore/explore">            
+                <% else %>
+                    <a id="navHome" href="/fatima/explore/explore">
+                <% end %>   
                     <img src="/images/securis.svg" class="img-responsive" width="50" height="50" alt="SECURIS: Fatima logo">
                 </a>
             </div>
 
             <ul class="nav navbar-nav" id="emergency_button">
-                <li><a href="/fatima/utility/sos">
+                <li>
+                    <% if I18n.locale == :en %>
+                        <a id="navHome" href="/en/fatima/utility/sos">            
+                    <% else %>
+                        <a id="navHome" href="/fatima/utility/sos">
+                    <% end %>   
                     <img src="/images/emergency.svg" class="img-responsive" width="45" height="45" alt="SOS"> 
                 </a></li>
             </ul>
@@ -122,7 +131,11 @@
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a id="navHome" href="/fatima/explore/explore">
+                <% if I18n.locale == :en %>
+                    <a id="navHome" href="/en/fatima/explore/explore">          
+                <% else %>
+                    <a id="navHome" href="/fatima/explore/explore">
+                <% end %>  
                     <img src="/images/Securis-Fatima17_logo_lat.png" class="img-responsive desktop-only" width="170" height="170" alt="SECURIS: Fatima logo">
                     <img src="/images/securis.svg" class="img-responsive mobile-medium" width="50" height="50" alt="SECURIS: Fatima logo">
                 </a>
