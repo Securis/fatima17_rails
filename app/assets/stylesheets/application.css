@@ -23,6 +23,11 @@ p {
 .small-text p {
   font-size: 14px;
 }
+ul {
+	font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
 html,
 body {
   height: 100%;

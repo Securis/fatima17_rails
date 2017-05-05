@@ -1,37 +1,198 @@
-<section id="cover" class="mobile-only">
-    <div id="history_lady" class="cover-content">
-        <a href="https://www.flickr.com/photos/pilgrimfatima/11932578126">
-            <h6>Source</h6>
-        </a>
-    </div>
-</section>
+<% attractions = [
+    {
+        name: "Sanctuary of Fátima", 
+        description: "Ecumenical Center located on the site of the apparitions of Our Lady to the Three Shepherds in 1917.", 
+        collapse: "attraction-santuary", 
+        text: ["The Shrine of Our Lady of the Rosary of Fátima is a Marian shrine dedicated to Our Lady of Fátima, located in Cova da Iria, Portugal. Built at the express request of Our Lady, during the Apparition of October of 1917 to the Three Little Shepherds, the reason was to preserve the memory of the events that led to its foundation. It is currently one of the most important Marian shrines in the world belonging to the Catholic Church and, by express request of the Apostolic See, it has become a National Shrine.","The Sanctuary of Fátima was distinguished with two papal Golden Roses, in recognition and reward for services rendered to the Church or for the good of society. The first Golden Rose was granted by Pope Paul VI on November 21, 1964, and the second was delivered by Pope Benedict XVI during his pilgrimage to Fátima on May 12th, 2010."], 
+        link: "http://www.google.com/maps/place/39.631256,-8.673136", 
+        img: "/images/attractions/santuarioFatima.JPG"
+    },
+    {
+        name: "Shrine Bookstore", 
+        description: "Bookstore integrated sanctuary inside the Shrine of Our Lady of Fátima.", 
+        collapse: "attraction-livraria", 
+        text: ["Offers its visitors a vast amount of publications of books and magazines of a religious nature."], 
+        link: "http://www.google.com/maps/place/39.632800, -8.673537", 
+        img: "/images/attractions/livraria.JPG"
+    },
+        {
+        name: "Prayer Enclosure", 
+        description: "Ample open space, occupies a central position in the complex of the Sanctuary of Fátima.", 
+        collapse: "attraction-recinto", 
+        text: ["The Prayer Hall of the Sanctuary of Fatima is a vast open space, inviting to interiority and prayer. It is in this space that pilgrims convene to attend the Fátima celebrations. The Chapel of the Apparitions constitutes the heart of the Campus.","It is possible to find, in this space, several monuments and sculptures: the Monument to the Sacred Heart of Jesus is a golden statue over a fountain; a triangular crib allusive to the Holy Trinity; the memorial monument, dedicated to the canon Dr. Manuel Nunes Formigão and priest Prof. Dr. Luis Fischer, two illustrious priests who were in the foundations of the historiography of the Apparitions of Fátima and the diffusion of his message - consists of seven panels of pearl-green granite"], 
+        link: "http://www.google.com/maps/place/39.630956, -8.673598", 
+        img: "/images/attractions/recintoOracoes.JPG"
+    },
+    {
+        name: "Basilica of Our Lady of the Rosary of Fatima", 
+        description: "Religious temple built on the site where the apparitions of the Virgin Mary took place.", 
+        collapse: "attraction-basilica", 
+        text: ["This Basilica is part of the Shrine of Fatima, where the remains of the Three Shepherds rest and stands on the site where, on May 13, 1917, the Three Little Shepherds played, when they saw the lightning that preceded the first Apparition of Our Lady. On the main entrance of the Basilica, there is a mosaic representing the Most Holy Trinity crowning Our Lady. The tombs of the three little shepherds are located at the extreme right (Francisco) and left (Jacinta and Lucia) of the transept."], 
+        link: "http://www.google.com/maps/place/39.632215, -8.671977", 
+        img: "/images/attractions/basilicaSraFatima.JPG"
+    },
+    {
+        name: "Chapel of the Apparitions", 
+        description: "Built in response to Mary's request, it is the most popular place of worship.", 
+        collapse: "attraction-capelinha", 
+        text: ["It was at the place where the little chapel that Our Lady spoke to the little shepherds. Of the six apparitions of the Virgin Mary, five took place in this place - May, June, July, September and October - where, for Our Lady's request, a chapel was to be built in her honor. Although subject to slight changes, the Chapel of the Apparitions maintains the original and characteristic features. The current porch was inaugurated at the time of John Paul II's first visit to the Sanctuary of Fátima on May 12th and 13th, 1982. The pedestal where the image of Our Lady is located marks the site of the small holm oak on which the Lady of the Rosary appeared."], 
+        link: "http://www.google.com/maps/place/39.631620, -8.673372", 
+        img: "/images/attractions/capelinhaAparicoes.JPG"
+    },
+    {
+        name: "Basilica of the Holy Trinity", 
+        description: "One of the largest basilicas in the world, with an international touch.", 
+        collapse: "attraction-trindade", 
+        text: ["The basilica is a modern building of circular shape and white color, the color of the stone that covers it, is from this region, which is known as white of the sea. The imposing building has a capacity of 8,633 seats, and the interior can be divided into two sections through a movable wall. The first stone of the building was offered by Pope John Paul II and is a fragment of the tomb of the Apostle Peter. Because of its importance, it was placed next to the altar, under a crucifix of 7.5 meters in height."], 
+        link: "http://www.google.com/maps/place/39.629672, -8.675287", 
+        img: "/images/attractions/basilicaSantissimaTrindade.JPG"
+    },
+    {
+        name: "Pastoral Center of Paul VI", 
+        description: "Its function is to support the pilgrims who visit the sanctuary every year", 
+        collapse: "attraction-pastoral", 
+        text: ["The Pastoral Center of Paul VI - named after the first pope who became a pilgrim of Fátima in May 1967 - is located on the west side of the Sanctuary of Fátima, beyond D. José Alves Correia da Silva avenue."], 
+        link: "http://www.google.com/maps/place/39.628054, -8.677659", 
+        img: "/images/attractions/centroPastoral.JPG"
+    },
+    {
+        name: "Valinhos", 
+        description: "Between the 8th and the 9th station of the Via-sacra on the Path of the Shepherds stands the place where the fourth apparition of Our Lady occurred on August 19, 1917.", 
+        collapse: "attraction-valinhos", 
+        text: ["The monument that marks the event was built with offerings from Hungarian Catholics. The image was carved by Maria Amélia Carvalheira da Silva and the niche in which it is was designed by António Lino."], 
+        link: "http://www.google.com/maps/place/39.618501, -8.668054", 
+        img: "/images/attractions/valinhos.JPG"
+    },
+    {
+        name: "Via Sacra and Calvário (Way of the Shepherds)", 
+        description: "The Way of the Cross path starts at the Santa Teresa Rotunda (south roundabout), in Fátima, ending at the Hungarian Calvary Chapel. (Make the walk from the Via Sacra to Valinhos and continue along the sidewalk to Calvário - Valinhos)", 
+        collapse: "attraction-via-sacra", 
+        text: ["It is a Path representative of the journey carried by Jesus Christ carrying the Cross, from the Pilate's Praetorium to the Mount of Calvary, episode of the Crucifixion. The path of fifteen illustrative stations (fourteen of the Crucifixion plus one of the Resurrection of Jesus Christ) offered by the Hungarian people is made by Christians meditating in prayer on the Passion of Christ. The stations are located in a section of the road used by the Shepherds, between Aljustrel and Cova da Iria, at the time of the apparitions.","Representations of the stations of the Way of the Cross:","I - Jesus is condemned to death;","II. Jesus carries the cross;","III - Jesus falls for the first time;","IV - Jesus sees his Mother;","V - Simon of Cyrene helps Jesus carry the cross;","VI - Veronica cleanses the face of Jesus;","VII - Jesus falls for the second time;","VIII - The women of Jerusalem weep for Jesus;","IX - Jesus falls the third time;","X - Jesus is stripped of his garments;","XI - Jesus is nailed to the cross;","XII - Jesus dies on the cross;","XIII - The body of Jesus is taken from the cross;","XIV - The body of Jesus is placed in the tomb."], 
+        link: "http://www.google.com/maps/place/39.625242, -8.666851", 
+        img: "/images/attractions/viaSacra.JPG"
+    },
+    {
+        name: "Loca do Anjo", 
+        description: "Place where the Shepherds of Fátima had the first and third appearances of the Angel.", 
+        collapse: "attraction-loca-anjo", 
+        text: ["The Angel and the three children were sculpted by Maria Amélia Carvalheira da Silva."], 
+        link: "http://www.google.com/maps/place/39.616363, -8.670304", 
+        img: "/images/attractions/loucaCabeco.JPG"
+    },
+    {
+        name: "House of Francisco and Jacinta Marto", 
+        description: "It was in this house that the brothers Francisco and Jacinta Marto were born and lived",
+        collapse: "attraction-casa-fj", 
+        text: ["Located about 2 kilometers from the Sanctuary of Fátima, in the village of Aljustrel, this was the home where the Blessed Francis and Jacinta Marto, the two youngest sons of the Marto family were born. In the year 2000 the two brothers were beatified by Pope John Paul II, who visited Fatima and presided over the celebration. Jacinta became the youngest non-martyred Christian to attain blessed status."], 
+        link: "http://www.google.com/maps/place/39.616285, -8.663537", 
+        img: "/images/attractions/casaJacintaFrancisco.JPG"
+    },
+    {
+        name: "House of Lúcia dos Santos", 
+        description: "It was in this room that the eldest of the three little shepherds spent her childhood.", 
+        collapse: "attraction-casa-lucia", 
+        text: ["In her yard, there are still the fig trees in the shade of which the three little shepherds played and hid when sought by curious people or pilgrims. In 1981, Sister Lúcia offered the house to the Sanctuary, which took possession of it only in 1986. The surrounding space of the house was arranged and in her yard, was built a new Reception and Information Desk, inaugurated in August 1994."], 
+        link: "http://www.google.com/maps/place/39.615615, -8.664918", 
+        img: "/images/attractions/casaLucia.JPG"
+    },
+    {
+        name: "Arneiro Well", 
+        description: "Place where the Angel of Peace appeared for the 2nd time in the summer of 1916.", 
+        collapse: "attraction-poco", 
+        text: ["In the backyard of the Lúcia’s house is the well that became famous for the second angelic apparition in the summer of 1916. It was there that Jacinta had a vision of the holy priest crying and praying on his knees in a large house"], 
+        link: "http://www.google.com/maps/place/39.614807, -8.664363", 
+        img: "/images/attractions/pocoArneiro.JPG"
+    },
+    {
+        name: "Aljustrel Museum-House", 
+        description: "Focused on ethnography, it takes us on a trip to Fatima in the year 1917", 
+        collapse: "attraction-museu-aljustrel", 
+        text: ["The Aljustrel Museum-House is located next to the birthplace of Lúcia, in the village of Aljustrel, about 2 km from the Sanctuary of Fátima. The Museum-House of Aljustrel opened in 1992, due to the concern with the preservation of spaces related to the Three Shepherds. This institution is able to show us a little of the rural life of Jacinta, Francisco and Lúcia, making the customs of the people of Fátima at the time of the apparitions known."],  
+        link: "http://www.google.com/maps/place/39.617030, -8.664402", 
+        img: "/images/attractions/casaMuseuAljustrel.JPG"
+    },
+    {
+        name: "Museum of Sacred Art and Ethnology", 
+        description: "Open since 1991, it is dedicated to the Nativity, Passion and Resurrection of Jesus", 
+        collapse: "attraction-arte-sacra", 
+        text: ["The Museum of Sacred Art and Ethnology of Fátima offers visitors a journey through the history of Salvation, through a vast collection of images of the Baby Jesus and cribs, and another of crucifixes and figures, relating to the Passion and death of Christ. The Ethnographic Exhibition represents the cultural universe in which the Gospel carried by the missionaries must be incarnated. There are original pieces from Africa, America and the Far East. Visitors can also visit the Pastorinhos Room and enjoy the relics of Blessed Francisco and Jacinta Marto and their family."], 
+        link: "http://www.google.com/maps/place/39.629114, -8.669211", 
+        img: "/images/attractions/museuArteSacra.JPG"
+    },
+    {
+        name: "Wax Museum of Fátima", 
+        description: "Very close to the Sanctuary, pilgrims can visit the Wax Museum of Fátima, one of the first of its kind in Portugal.", 
+        collapse: "attraction-cera", 
+        text: ["According to the motto of the museum, 'to appreciate the 31 scenes of this museum is to understand why the 6 million people travel to Fátima each year.' In scenes composed by wax figures, this Museum depicts the history of the seers of Fátima and its historical context."], 
+        link: "http://www.google.com/maps/place/39.632082, -8.677499", 
+        img: "/images/attractions/museuCera.JPG"
+    },
+    {
+        name: "The Miracle of Fátima Interactive Museum", 
+        description: "Using new technologies (holograms and 4D), the beginning of the 20th century was recreated.", 
+        collapse: "attraction-interativo", 
+        text: ["In a unique experience, the apparitions of the Angel of Portugal and of Our Lady to the three Shepherds, with a historical framework, are recreated using new technologies. The visits of Pope John Paul II to Fátima, the procession of candles and the Secret told during the apparition are also present during the tour."],  
+        link: "http://www.google.com/maps/place/39.630243, -8.678257", 
+        img: "/images/attractions/museuInteractivo.JPG"
+    },
+    {
+        name: "Fátima Shrine Museum", 
+        description: "Built to show the offerings made to the Shrine, it holds the Virgin's crown.", 
+        collapse: "attraction-museu-santuario", 
+        text: ["The Museum is mainly made up of offers delivered to the Sanctuary, among which stands the crown that is placed in the image of the Virgin Mary in the days of great pilgrimages. This unique copy was executed in Lisbon and twelve artists worked in it for 3 months. With a weight of 1200 grams, it is enriched with 313 pearls and almost 2700 precious stones."], 
+        link: "http://www.google.com/maps/place/39.630901, -8.672128", 
+        img: "/images/attractions/museuSantuario.JPG"
+    },
+    {
+        name: "Wall of Berlin in Fátima", 
+        description: "There is a piece of modern German history in Fátima.",
+        collapse: "attraction-muro-berlim", 
+        text: ["It is a monument, within a curved showcase, which exhibits a piece of apparently normal concrete. But it is not. It is a plaque of the Berlin wall, brought to the Sanctuary on May 5th, 1991, on the initiative of a group of citizens headed by Virgil Casimiro, a Portuguese immigrant in Frankfurt"], 
+        link: "http://www.google.com/maps/place/39.630245, -8.672840", 
+        img: "/images/attractions/muroBerlim.JPG"
+    }
+    ] %>
 
-<section id="page_content-with-cover">
+<section id="page_content">
     <div class="container-fluid">
 
         <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2" >
 
             <div class="desktop-medium">
-                <h1>Available Soon</h1>
+                <h1>Attractions</h1>
                 <hr/>
             </div>
 
-            <div class = "row">
-                <div class="col-sm-8">
-                    <p>It won't take long</p>
-                </div>
-                
-                <div class="col-sm-4 desktop-medium" id="sidebar-outer">
-                    <div id="sidebar">
-                        <img src="/images/history/lady_sq.jpg" class="img-responsive">
-                        <a href="https://www.flickr.com/photos/pilgrimfatima/11932578126">
-                            <h6>Source</h6>
+            <% attractions.each do |attraction| %>
+                <div class = "row attraction">
+                    <div class="col-xs-12 col-sm-8" >
+                        <h3><%= attraction[:name] %></h3>
+                        <p><%= attraction[:description] %></p>
+
+                        <a class="" role="button" data-toggle="collapse" href="#<%= attraction[:collapse] %>" aria-expanded="false" aria-controls="<%= attraction[:collapse] %>">
+                            <p> More info <span class="caret"></span></p>
                         </a>
+                        <div class="collapse" id="<%= attraction[:collapse] %>">
+                            <div class="small-text">
+                                <% attraction[:text].each do |text| %>
+                                    <p><%= text %></p>
+                                <% end %>
+                            </div>
+                        </div>
+
+                        <div class="bottom-space">
+                            <a href="<%= attraction[:link] %>" class="btn btn-default">
+                                <i class="fa fa-map-o" aria-hidden="true"></i> Directions
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="col-xs-12 col-sm-4" >
+                        <img src="<%= attraction[:img] %>"  class="img-responsive" alt="">
                     </div>
                 </div>
-
-
-            </div>
+            <% end %>
                      
         </div>
 
