@@ -15,18 +15,16 @@
  *= require font-awesome
  */
  
-p {
+p, ul {
   font-size: 16px;
-  line-height: 1.5;
   margin-bottom: 20px;
+  line-height: 1.5;
 }
 .small-text p {
   font-size: 14px;
 }
-ul {
-	font-size: 16px;
-  line-height: 1.5;
-  margin-bottom: 20px;
+h4 {
+	line-height: 1.5;
 }
 html,
 body {
