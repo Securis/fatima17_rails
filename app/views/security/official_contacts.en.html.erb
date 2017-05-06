@@ -1,3 +1,740 @@
+<% contacts = [ 
+    {
+        code: "Argélia",
+        country: "Algeria",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Rua Duarte Pacheco Pereira, 58, 1400-140 LISBOA","+351 213 041 520"],
+                },
+            ],
+    },
+    {
+        code: "Angola",
+        country: "Angola",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Av. da República, 68, 1050-197 LISBOA","+351 21 796 7041"],
+                },
+                {
+                    name: "Consulate",
+                    info: ["R. Alexandre Herculano, 352, 5º - S 53, 4000-053 PORTO"],
+                },
+            ],
+    },
+    {
+        code: "Argentina",
+        country: "Argentina",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Avenida João Crisóstomo, 8 r/c E 1000-178 Lisboa","+351 217 960 517"],
+                },
+            ],
+
+    },
+    {
+        code: "Austrália",
+        country: "Australia",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Avenida da Liberdade, 196 /200, 2º E, 1250-147 Lisboa","+351 213 101 500"],
+                },
+            ],
+    },
+        {
+        code: "Áustria",
+        country: "Austria",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["venida Infante Santo 43, 1399-046 Lisboa","+351 213 943 900"],
+                },
+                {
+                    name: "Consulate",
+                    info: ["Avenida Infante Santo 43 4º, 1350 Lisboa","+351 213 958 220"],
+                },
+            ],
+
+    },
+    {
+        code: "Bélgica",
+        country: "Belgium",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Praça Marquês de Pombal 14 6º, 150-162 Lisboa","+351 213 170 510"],
+                },
+                {
+                    name: "Consulate",
+                    info: ["Al. Basílio Teles 26, 4150-127 Porto","+351 226 090 664"],
+                },
+            ],
+    },
+        {
+        code: "Brasil",
+        country: "Brazil",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Estrada das Laranjeiras 144, 1600-137Lisboa","+351 21 72485 22"],
+                },
+                {
+                    name: "Consulate",
+                    info: ["Avenida França 20 1ºS 101, 4050-275 Porto","+351 226 084 070"],
+                },
+            ],
+
+    },
+    {
+        code: "Bulgaria",
+        country: "Bulgaria",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Rua Sacramento à Lapa 29/31, 1200-792 Lisboa","+351 213 976 364"],
+                },
+            ],
+    },
+    {
+        code: "Canadá",
+        country: "Canada",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Avenida da Liberdade, Edifício Victória 196/200 3º, 1250-139 Lisboa","351 213 164 600"],
+                },
+            ],
+    },
+    {
+        code: "CaboVerde",
+        country: "Cape Verde",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Avenida Restelo 33, 1400 Lisboa","+351 213 041 440"],
+                },
+                {
+                    name: "Consulate",
+                    info: ["Rua da Boavista, nº 17,  4050-107 Porto","+351 222 031 077"],
+                },
+            ],
+
+    },
+    {
+        code: "Chile",
+        country: "Chile",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["venida Miguel Bombarda 5 1º Andar, 1000-207 Lisboa","+351 213 148 054"],
+                },
+            ],
+    },
+        {
+        code: "China",
+        country: "China",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Rua de S. Caetano 2 (à Lapa), 1249-024 Lisboa","+351 213 967 748"],
+                },
+            ],
+
+    },
+        {
+        code: "Colombia",
+        country: "Colombia",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Avenida Fontes Pereira de Melo 16 6º Andar, Palácio Sottomayor","+351 213 188 480"],
+                },
+            ],
+
+    },
+    {
+        code: "Croácia",
+        country: "Croatia",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Rua Dom Lourenço de Almeida 24, 1400 Lisboa","+351 213 021 033"],
+                },
+            ],
+    },
+    {
+        code: "Cuba",
+        country: "Cuba",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Rua Pero Da Covilha 14, 1400-297 Lisboa","+351 213 041 860"],
+                },
+            ],
+    },
+    {
+        code: "Chipre",
+        country: "Cyprus",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Avenida da Liberdade 229, 1250 Lisboa","+351 213 194 180"],
+                },
+            ],
+    },
+    {
+        code: "Checa",
+        country: "Czech Republic",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Rua Pêro de Alenquer 14, 1400-294 Lisboa","+351 213 001 010"],
+                },
+            ],
+
+    },
+    {
+        code: "Dinamarca",
+        country: "Denmark",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Rua Castilho 14, 1250-066 Lisboa","+351 213 545 099"],
+                },
+            ],
+    },
+    {
+        code: "Dominicana",
+        country: "Dominican Republic",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Campo Grande 35 12ª, 1700-087 Lisboa","+351 217 811 120"],
+                },
+            ],
+    },
+    {
+        code: "Timor-Leste",
+        country: "East-Timor",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Largo Jerónimos 3 1º, 1400-209 Lisboa","+351 213 933 730"],
+                },
+            ],
+    },
+    {
+        code: "Egito",
+        country: "Egypt",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Avenida Dom Vasco da Gama 8, 1400-128 Lisboa","+351 213 018 301"],
+                },
+            ],
+    },
+    {
+        code: "Equador",
+        country: "Ecuador",
+        contact_info: [
+                {
+                    name: "Consulate",
+                    info: ["Rua Gonçalo Cristovão 96 7ºD, 4264 Porto","+351 222 056 753"],
+                },
+            ],
+    },
+    {
+        code: "Estónia",
+        country: "Estonia",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Rua Filipe Folque nr.10ºJ 2ºE, 1050-113 Lisboa","+351 213 194 150"],
+                },
+            ],
+    },
+    {
+        code: "Finlândia",
+        country: "Finland",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Rua do Possolo 76, 1350 Lisboa","+351213 933 040"],
+                },
+            ],
+    },
+    {
+        code: "França",
+        country: "France",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Rua Santos-o-Velho 5, 1249-079 Lisboa","+351 213 939 100"],
+                },
+            ],
+    },
+    {
+        code: "Alemanha",
+        country: "Germany",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Campo Mártires da Pátria, 38, 1150-225 LISBOA"," +351 21 881 02 10"],
+                },
+                {
+                    name: "Consulate",
+                    info: ["Av. Boavista 5004, 4100-125 Porto","+351 226 102 336"],
+                },
+            ],
+
+    },
+    {
+        code: "ReinoUnido",
+        country: "Great Britain",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Rua de São Bernardo 33, 1200 Lisboa","+351 213 924 000"],
+                },
+            ],
+    },
+    {
+        code: "Grécia",
+        country: "Greece",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Rua Alto do Duque 13, 1400 Lisboa","+351 213 031 260"],
+                },
+            ],
+    },
+    {
+        code: "Guiné-Bissau",
+        country: "Guinea-Bissau",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Rua Alcolena 17, 1400-004 Lisboa","+351 213 009 080"],
+                },
+                {
+                    name: "Consulate",
+                    info: ["Avenida dos Aliados 236 1º, 4000 Porto","+351 223 321 471"],
+                },
+            ],
+    },
+    {
+        code: "Hungria",
+        country: "Hungary",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Calçada Santo Amaro 85, 1300 Lisboa","+351 213 645 928"],
+                },
+            ],
+    },
+    {
+        code: "India",
+        country: "India",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Rua Pêro da Covilhã 16A, 1400 Lisboa","+351 213 041 090"],
+                },
+            ],
+    },
+    {
+        code: "Indonésia",
+        country: "Indonesia",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Avenida Dom Vasco da Gama 40, 1249 Lisboa","+351 308 804 250"],
+                },
+            ],
+    },
+    {
+        code: "Irlanda",
+        country: "Ireland",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Avenida da Liberdade 200, 1250-147 Lisboa","+351 213 308 200"],
+                },
+            ],
+    },
+    {
+        code: "Israel",
+        country: "Israel",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Rua António Enes 16, 1050-023 Lisboa","+351 210 455 500"],
+                },
+            ],
+    },
+    {
+        code: "Itália",
+        country: "Italy",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Largo Conde Pombeiro 6, 1150 Lisboa","+351 213 515 320"],
+                },
+                {
+                    name: "Consulate",
+                    info: ["Rua da Restauração 409, 4050-506 Porto","+351 226 006 546"],
+                },
+            ],
+    },
+    {
+        code: "Japão",
+        country: "Japan",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Avenida da Liberdade 245, 1250-096 Lisboa","+351 213 110 560"],
+                },
+            ],
+    },
+    {
+        code: "Látvia",
+        country: "Latvia",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Rua do Sacramento à Lapa 50 a 52, 1200-794 Lisboa","+351 213 407 170"],
+                },
+            ],
+    },
+    {
+        code: "Luxemburgo",
+        country: "Luxembourg",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Rua das Janelas Verdes 43, 1200 Lisboa","+351 213 931 940"],
+                },
+            ],
+    },
+    {
+        code: "México",
+        country: "Mexico",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Estrada Monsanto 78, 1500 Lisboa","+351 217 621 290"],
+                },
+            ],
+    },
+    {
+        code: "Moldávia",
+        country: "Moldova",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Rua Gonçalo Velho Cabral 31A, 1400 Lisboa","+351 213 009 064"],
+                },
+            ],
+    },
+        {
+        code: "Marrocos",
+        country: "Morocco",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Rua Alto do Duque 21, 1400-009 Lisboa","+351 213 008 080"],
+                },
+                {
+                    name: "Consulate",
+                    info: ["Av. 5 Outubro 28, 8700 Olhão","+351 289 702 449"],
+                },
+            ],
+    },
+    {
+        code: "Moçambique",
+        country: "Mozambique",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Avenida de Berna 7, 1050 Lisboa","+351 217 800 378"],
+                },
+                {
+                    name: "Consulate",
+                    info: ["Rua Santos Pousada 441S 4, 4000-486 Porto","+351 225 377 535"],
+                },
+            ],
+    },
+        {
+        code: "Holanda",
+        country: "Netherlands",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Avenida Infante Santo 43 5º, 1399-011 Lisboa","+351 213 914 900"],
+                },
+            ],
+    },
+    {
+        code: "Nigéria",
+        country: "Nigeria",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Avenida Dom Vasco da Gama 3, 1400-127 Lisboa","+351 214 075 593"],
+                },
+            ],
+    },
+    {
+        code: "Noruega",
+        country: "Norway",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Avenida Dom Vasco da Gama 1, 1400 Lisboa","+351 213 009 100"],
+                },
+            ],
+    },
+
+    {
+        code: "Panamá",
+        country: "Panama",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Rua Pêro de Alenquer 5, 1400-293 Lisboa","+351 213 644 577"],
+                },
+            ],
+    },
+    {
+        code: "Paraguai",
+        country: "Paraguay",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Rua Alexandre Herculano 17, 1250-008 Lisboa","+351 217 965 907"],
+                },
+            ],
+    },
+    {
+        code: "Peru",
+        country: "Peru",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Rua Castilho 50 4ºD, 1250-071 Lisboa","+351 213 827 470"],
+                },
+                {
+                    name: "Consulate",
+                    info: ["Hotel Atlantis Suite 927, 8125-903 Quarteira","+351 289 330 600"],
+                },
+            ],
+    },
+    {
+        code: "Polónia",
+        country: "Poland",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Avenida das Descobertas 2, 1400-092 Lisboa","+351 213 041 410"],
+                },
+            ],
+    },
+    {
+        code: "Roménia",
+        country: "Romania",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Rua São Caetano 5, 1200-623 Lisboa","+351 213 960 866"],
+                },
+            ],
+    },
+    {
+        code: "Rússia",
+        country: "Russia",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Rua Visconde de Santarém 57, 1000-286 Lisboa","+351 218 462 423"],
+                },
+            ],
+    },
+    {
+        code: "Arábia",
+        country: "Saudi Arabia",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Av. do Restelo, 42, 1400-315 Lisboa","+351 213 041 750"],
+                },
+            ],
+
+    },
+    {
+        code: "STP",
+        country: "São Tomé and Principe",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Avenida 5 de Outubro 35, 4º Andar, 1050-047 Lisboa","+351 218 461 917"],
+                },
+                {
+                    name: "Consulate",
+                    info: ["Avenida Boavista 1203S 303, 4100-130 Porto","+351 226 096 723"],
+                },
+            ],
+    },
+    {
+        code: "Sérvia",
+        country: "Servia",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Rua Alcolena 11, 1400-314 Lisboa","+351 213 015 311"],
+                },
+            ],
+    },
+    {
+        code: "Eslováquia",
+        country: "Slovakia",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Avenida Liberdade 200 5ºE, 1250-147 Lisboa","+351 213 583 300"],
+                },
+            ],
+    },
+    {    
+        code: "africasul",
+        country: "South Africa",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Av. Luís Bívar 10, 1069 Lisboa","+351 21 319 2200"],
+                },
+                {
+                    name: "Consulate",
+                    info: ["R. Pimenta Aguiar Bl.3-3º, Ed. Torise,  9000-026 Funchal "," +351 291 742 825"],
+                },
+            ],
+
+    },
+    {
+        code: "Coreia",
+        country: "South Korea",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Avenida Miguel Bombarda 36, 1050 Lisboa","+351 217 817 130"],
+                },
+            ],
+    },
+    {
+        code: "Espanha",
+        country: "Spain",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Praça de Espanha 1, 1269-052 Lisboa","+351 213 472 381"],
+                },
+            ],
+    },
+    {
+        code: "Suécia",
+        country: "Sweden",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Rua Miguel Lupi 12, 1200-109 Lisboa","+351 213 942 260"],
+                },
+            ],
+    },
+    {
+        code: "Suíça",
+        country: "Switzerland",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["ravessa do Jardim 15, 1350-229 Lisboa","+351 213 944 090"],
+                },
+            ],
+    },
+    {
+        code: "Tunísia",
+        country: "Tunisia",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Rua Rodrigo Rebêlo 16 1400-318 Lisboa","+351 213 010 330"],
+                },
+            ],
+    },
+    {
+        code: "Turquia",
+        country: "Turkey",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Avenida das Descobertas 22, 1400 Lisboa","+351 213 003 110"],
+                },
+            ],
+    },
+    {
+        code: "Emirados",
+        country: "United Arab Emirates",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Praça Príncipe Real 15, 16 e 17, 1250-184 Lisboa","+351 213 110 000"],
+                },
+            ],
+    },
+    {
+        code: "Ucrânia",
+        country: "Ukraine",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Avenida das Descobertas 18, 1400-318 Lisboa","+351 213 010 058"],
+                },
+            ],
+    },
+    {
+        code: "Uruguai",
+        country: "Uruguay",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Rua Sampaio e Pina 16 2, 1070-249 Lisboa","+351 213 889 245"],
+                },
+            ],
+    },
+    {
+        code: "América",
+        country: "United States of America",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Avenida das Forças Armadas, 1600-081 Lisboa","351217 273 300"],
+                },
+            ],
+    },
+    {
+        code: "Venezuela",
+        country: "Venezuela",
+        contact_info: [
+                {
+                    name: "Embassy",
+                    info: ["Avenida Duque de Loulé 47 4º, 1050-086 Lisboa","+351 213 573 803"],
+                },
+            ],
+    },
+
+] %>
+
 <section id="cover" class="mobile-only">
     <div id="security_contacts" class="cover-content">
     </div>
@@ -9,15 +746,35 @@
         <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2" >
 
             <div class="desktop-medium">
-                <h1>Consulates / Embassies</h1>
+                <h1>Embassies / Consulates</h1>
                 <hr/>
             </div>
 
             <div class = "row">
-                <div class="col-sm-8">
-                    <p>Available Soom. </p>
+                <div class="col-sm-8 officialContacts">
+
+                    <% contacts.each do |contact| %>
+                        <a class="" role="button" data-toggle="collapse" href="#<%= contact[:code] %>" aria-expanded="false" aria-controls="<%= contact[:code] %>">
+                            <h4><b> <%= contact[:country] %> <span class="caret"></span></b></h4>
+                        </a>
+                        <div class="collapse" id="<%= contact[:code] %>">
+                            <div class="stuff">
+                                <% contact[:contact_info].each do |contact_info| %>
+                                    <p><b><%= contact_info[:name] %></b></p>
+
+                                    <% contact_info[:info].each do |info| %>
+                                        <p><%= info %></p>
+                                    <% end %>
+                                    
+                                    <br>
+                                <% end %>
+                            </div>
+                        </div>
+
+                    <% end %>
+
                 </div>
-                
+
                 <div class="col-sm-4 desktop-medium" id="sidebar-outer">
                     <div id="sidebar">
                         <img src="/images/security/world.jpeg" class="img-responsive">

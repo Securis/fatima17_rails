@@ -23,8 +23,15 @@ p, ul, ol {
 .small-text p {
   font-size: 14px;
 }
+.stuff p{
+	margin: 0;
+    padding: 0;
+}
 h4 {
 	line-height: 1.5;
+}
+h1 {
+	font-weight: bold;
 }
 html,
 body {
@@ -300,4 +307,8 @@ body {
 
 #page_content-with-cover li {
 	font-size: 16px;
+}
+
+.officialContacts a {
+	color: #333;
 }
