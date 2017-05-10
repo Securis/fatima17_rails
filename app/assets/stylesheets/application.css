@@ -33,6 +33,9 @@ h4 {
 h1 {
 	font-weight: bold;
 }
+.uppercaseText {
+	text-transform: uppercase;
+}
 html,
 body {
   height: 100%;

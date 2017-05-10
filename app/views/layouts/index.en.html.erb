@@ -43,7 +43,7 @@
 
     <% content_for :language_option do %>
         <li role="presentation" class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= t('menu.menu_op7') %><span class="caret"></span></a>
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-globe" aria-hidden="true"></i> <%= t('menu.menu_op7') %>: <span class="uppercaseText"><%=I18n.locale%></span> <span class="caret"></span></a>
             <ul class="dropdown-menu">
                 <% available_languages.each do |option| %>
                     <% if I18n.locale == option[:dim] %>
